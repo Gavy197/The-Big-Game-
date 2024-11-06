@@ -8,6 +8,7 @@ const SPEED = 300.0
 
 #Onreadys
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var dashCD: Timer = $dashCD
 
 
 func _physics_process(delta: float) -> void:
