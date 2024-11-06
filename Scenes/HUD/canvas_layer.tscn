@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6mrf76fn7r2o"]
+
+[ext_resource type="Script" path="res://Scripts/gui/HealthBar.gd" id="1_ovs8a"]
+[ext_resource type="Theme" uid="uid://dmerp1it5lka2" path="res://Scenes/HUD/gui.tres" id="1_us2ob"]
+
+[node name="ParentCanvasLayer" type="CanvasLayer"]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -117.0
+offset_right = 49.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme = ExtResource("1_us2ob")
+value = 100.0
+script = ExtResource("1_ovs8a")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
+#signals
+signal healthChanged
 #Constants
 const SPEED = 300.0
 
 #Varibales
-@export var health: int = 100
+@export var currentHealth: int = 50
+@export var maxHealth: int = 100
 
 #Onreadys
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
