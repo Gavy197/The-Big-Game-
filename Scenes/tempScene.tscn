@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://xb7cvnmogeb8"]
+
+[ext_resource type="Texture2D" uid="uid://ltmw0m4psiys" path="res://Assets/Tilesets/dungeon tileset/Tiles.png" id="1_jkkxa"]
+[ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="2_uwci4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jkkxa")
+
+[node name="Player" parent="." instance=ExtResource("2_uwci4")]
+position = Vector2(-67, -124)

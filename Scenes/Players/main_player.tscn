@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bo3q1nxbpek1r"]
+[gd_scene load_steps=26 format=3 uid="uid://bo3q1nxbpek1r"]
 
 [ext_resource type="Texture2D" uid="uid://byajguxicw3v" path="res://Assets/Player/Kinght color silver/_Idle.png" id="1_oog4x"]
 [ext_resource type="Script" path="res://main_player.gd" id="1_ry7tk"]
@@ -153,17 +153,26 @@ animations = [{
 "texture": SubResource("AtlasTexture_y20ra")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"Walk",
 "speed": 10.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj36b"]
+size = Vector2(21, 38)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ry7tk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -40)
+position = Vector2(3, -40)
 sprite_frames = SubResource("SpriteFrames_0d5q4")
 animation = &"Idle"
-frame_progress = 0.148228
+autoplay = "Idle"
+frame_progress = 0.310944
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -19)
+shape = SubResource("RectangleShape2D_nj36b")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-3, -23)
