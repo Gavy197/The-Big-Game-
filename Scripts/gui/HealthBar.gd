@@ -1,4 +1,4 @@
-extends ProgressBar
+extends TextureProgressBar
 
 
 
@@ -7,7 +7,6 @@ extends ProgressBar
 func _ready():
 	player.healthChanged.connect(update)
 	update()
-	
 	
 
 func update():
