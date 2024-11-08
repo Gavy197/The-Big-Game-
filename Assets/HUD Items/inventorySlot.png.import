@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhqg7jthb51xq"
-path="res://.godot/imported/healthbarUnder.png-722645a49cfebf9a1a87eb3d78b0b916.ctex"
+uid="uid://bstcxyimfenm0"
+path="res://.godot/imported/inventorySlot.png-fe07898605b9dd96cd2a3a5826505820.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/HUD/healthbarUnder.png"
-dest_files=["res://.godot/imported/healthbarUnder.png-722645a49cfebf9a1a87eb3d78b0b916.ctex"]
+source_file="res://Assets/HUD Items/inventorySlot.png"
+dest_files=["res://.godot/imported/inventorySlot.png-fe07898605b9dd96cd2a3a5826505820.ctex"]
 
 [params]
 

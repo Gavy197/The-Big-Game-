@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://do4ibyxu1e7gf"]
+
+[ext_resource type="Texture2D" uid="uid://cclrds06p8ay3" path="res://Assets/HUD Items/InventoryRect.png" id="1_ees7o"]
+[ext_resource type="PackedScene" uid="uid://jgln0815u8kh" path="res://Scenes/HUD/inventory/slot_gui.tscn" id="2_lbeuf"]
+
+[node name="InventoryGui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 49.0
+texture = ExtResource("1_ees7o")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 122.0
+offset_bottom = 47.0
+columns = 5
+
+[node name="Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_lbeuf")]
+layout_mode = 2
+
+[node name="Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_lbeuf")]
+layout_mode = 2
+
+[node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_lbeuf")]
+layout_mode = 2
+
+[node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_lbeuf")]
+layout_mode = 2
+
+[node name="Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_lbeuf")]
+layout_mode = 2
+
+[node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_lbeuf")]
+layout_mode = 2
+
+[node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_lbeuf")]
+layout_mode = 2
+
+[node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_lbeuf")]
+layout_mode = 2
+
+[node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_lbeuf")]
+layout_mode = 2
+
+[node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_lbeuf")]
+layout_mode = 2

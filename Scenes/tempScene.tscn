@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://xb7cvnmogeb8"]
+[gd_scene load_steps=5 format=3 uid="uid://xb7cvnmogeb8"]
 
 [ext_resource type="Texture2D" uid="uid://ltmw0m4psiys" path="res://Assets/Tilesets/dungeon tileset/Tiles.png" id="1_jkkxa"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="2_uwci4"]
 [ext_resource type="PackedScene" uid="uid://c6mrf76fn7r2o" path="res://Scenes/HUD/canvas_layer.tscn" id="3_opqy1"]
+[ext_resource type="PackedScene" uid="uid://do4ibyxu1e7gf" path="res://Scenes/HUD/inventory/inventory_gui.tscn" id="4_ph6c5"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,3 +14,9 @@ texture = ExtResource("1_jkkxa")
 position = Vector2(-67, -124)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_opqy1")]
+
+[node name="InventoryGui" parent="CanvasLayer" instance=ExtResource("4_ph6c5")]
+offset_left = 9.0
+offset_top = 36.0
+offset_right = 9.0
+offset_bottom = 36.0
