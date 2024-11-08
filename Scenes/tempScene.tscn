@@ -10,3 +10,7 @@ texture = ExtResource("1_jkkxa")
 
 [node name="Player" parent="." instance=ExtResource("2_uwci4")]
 position = Vector2(-67, -124)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-2, -19)
+position_smoothing_enabled = true
