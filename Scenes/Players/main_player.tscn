@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=3 uid="uid://bo3q1nxbpek1r"]
 
+[ext_resource type="Script" path="res://Scripts/Player/main_player.gd" id="1_ajyaa"]
 [ext_resource type="Texture2D" uid="uid://byajguxicw3v" path="res://Assets/Player/Kinght color silver/_Idle.png" id="1_oog4x"]
-[ext_resource type="Script" path="res://main_player.gd" id="1_ry7tk"]
 [ext_resource type="Texture2D" uid="uid://dfkvlj2hbu0b5" path="res://Assets/Player/Kinght color silver/_Run.png" id="2_6dxsa"]
 [ext_resource type="Texture2D" uid="uid://csnmuemdo7bc4" path="res://Assets/Player/Kinght color silver/_Dash.png" id="2_80q5y"]
 [ext_resource type="Texture2D" uid="uid://dvwrd2o4bwvx1" path="res://Assets/Player/Kinght color silver/_Attack.png" id="5_t4k53"]
@@ -263,13 +263,14 @@ animations = [{
 size = Vector2(21, 38)
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_ry7tk")
-dashStrength = 200
+script = ExtResource("1_ajyaa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -40)
 sprite_frames = SubResource("SpriteFrames_0d5q4")
-animation = &"Dash"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
@@ -279,3 +280,17 @@ shape = SubResource("RectangleShape2D_nj36b")
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 
 [node name="dashCD" type="Timer" parent="."]
+
+[node name="dashPart" type="CPUParticles2D" parent="."]
+position = Vector2(-2, -20)
+emitting = false
+amount = 500
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_max = 30.0
+orbit_velocity_min = -1.0
+orbit_velocity_max = 1.0
