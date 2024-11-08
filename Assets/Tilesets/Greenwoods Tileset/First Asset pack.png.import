@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ltmw0m4psiys"
-path="res://.godot/imported/Tiles.png-0ab186ccf9929329853db5793920a5c5.ctex"
+uid="uid://c8xixbybjh0u7"
+path="res://.godot/imported/First Asset pack.png-de46fa6a2fdbe383cdc7a509d0d7a342.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Dungeon Tileset/Tiles.png"
-dest_files=["res://.godot/imported/Tiles.png-0ab186ccf9929329853db5793920a5c5.ctex"]
+source_file="res://Assets/Tilesets/Greenwoods Tileset/First Asset pack.png"
+dest_files=["res://.godot/imported/First Asset pack.png-de46fa6a2fdbe383cdc7a509d0d7a342.ctex"]
 
 [params]
 
