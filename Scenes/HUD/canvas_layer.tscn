@@ -1,15 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6mrf76fn7r2o"]
+[gd_scene load_steps=7 format=3 uid="uid://c6mrf76fn7r2o"]
 
 [ext_resource type="Script" path="res://Scripts/gui/HealthBar.gd" id="1_ovs8a"]
+[ext_resource type="Script" path="res://Scripts/gui/canvas_layer.gd" id="1_uhhow"]
 [ext_resource type="Texture2D" uid="uid://dhqg7jthb51xq" path="res://Assets/HUD Items/healthbarUnder.png" id="3_itwwr"]
 [ext_resource type="Texture2D" uid="uid://c7rfs4xynhrg0" path="res://Assets/HUD Items/healthbarProgress.png" id="4_dmyu4"]
+[ext_resource type="PackedScene" uid="uid://do4ibyxu1e7gf" path="res://Scenes/HUD/inventory/inventory_gui.tscn" id="4_s00ix"]
+[ext_resource type="Script" path="res://Scripts/gui/inventory_gui.gd" id="5_seopk"]
 
 [node name="ParentCanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_uhhow")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_right = 40.0
+offset_left = -2.0
+offset_right = 62.0
 offset_bottom = 40.0
 scale = Vector2(3, 3)
 texture_under = ExtResource("3_itwwr")
 texture_progress = ExtResource("4_dmyu4")
 script = ExtResource("1_ovs8a")
+
+[node name="InventoryGui" parent="." instance=ExtResource("4_s00ix")]
+custom_minimum_size = Vector2(138, 90)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+script = ExtResource("5_seopk")
