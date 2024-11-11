@@ -8,7 +8,7 @@ const SPEED = 300.0
 var normalMove:bool =true
 @export var dashDist:int=40
 #Adds a t varible for interpolation
-
+var tDash =0
 #Onreadys
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dashCD: Timer = $dashCD
@@ -17,7 +17,7 @@ var normalMove:bool =true
 
 func _physics_process(delta: float) -> void:
 	#Helps handle interpolation
-
+	tDash +=.01
 	#Handles movement animations
 	if normalMove==true:
 		# Handles walking left/right.
@@ -54,18 +54,26 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Dash"):
 		dash()
 		
+			
 func dash():
+	#Resets the particles
+	dashPart.direction=Vector2(0,0)
 	#Makes the dash direction start as 0,0
 	var dashDirection:Vector2=Vector2(0,0)
 	#Sets the current dash direction to which direction you are moving
 	if(velocity.x>0):
 		dashDirection.x=1
+		dashPart.direction.x=-1
 	elif(velocity.x<0):
 		dashDirection.x=-1
+		dashPart.direction.x=1
 	if(velocity.y>0):
 		dashDirection.y=1
+		dashPart.direction.y=-1
+
 	elif(velocity.y<0):
 		dashDirection.y=-1
+		dashPart.direction.y=1
 	
 	#Sets a target end position for the dash, based on the strengh, and the direction you are moving
 	var dashTarget = global_position+(Vector2(dashDist,dashDist)*dashDirection)

@@ -282,15 +282,16 @@ shape = SubResource("RectangleShape2D_nj36b")
 [node name="dashCD" type="Timer" parent="."]
 
 [node name="dashPart" type="CPUParticles2D" parent="."]
-position = Vector2(-2, -20)
+position = Vector2(-1, -21)
 emitting = false
 amount = 500
 one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0
 randomness = 1.0
-spread = 180.0
+lifetime_randomness = 1.0
+direction = Vector2(0, 0)
+spread = 0.0
 gravity = Vector2(0, 10)
-initial_velocity_max = 30.0
-orbit_velocity_min = -1.0
-orbit_velocity_max = 1.0
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
