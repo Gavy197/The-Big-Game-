@@ -266,6 +266,7 @@ size = Vector2(21, 38)
 script = ExtResource("1_ajyaa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -40)
@@ -276,8 +277,6 @@ autoplay = "Idle"
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, -19)
 shape = SubResource("RectangleShape2D_nj36b")
-
-[node name="CollisionBox" type="CollisionShape2D" parent="."]
 
 [node name="dashCD" type="Timer" parent="."]
 

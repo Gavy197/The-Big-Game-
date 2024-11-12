@@ -6,18 +6,17 @@ const SPEED = 300.0
 #Varibales
 @export var health: int = 100
 var normalMove:bool =true
-@export var dashDist:int=40
-#Adds a t varible for interpolation
-var tDash =0
+@export var dashDist:int=80
+@export var effectCount:int=5
+
 #Onreadys
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dashCD: Timer = $dashCD
 @onready var dashPart:CPUParticles2D=$dashPart
-
+#Preloads
+@onready var dashEffect=preload("res://Scenes/Players/dash_effect.tscn")
 
 func _physics_process(delta: float) -> void:
-	#Helps handle interpolation
-	tDash +=.01
 	#Handles movement animations
 	if normalMove==true:
 		# Handles walking left/right.
@@ -52,7 +51,8 @@ func _physics_process(delta: float) -> void:
 	
 	#Dashing
 	if Input.is_action_just_pressed("Dash"):
-		dash()
+		if velocity!=Vector2(0,0):
+			dash()
 		
 			
 func dash():
@@ -74,7 +74,8 @@ func dash():
 	elif(velocity.y<0):
 		dashDirection.y=-1
 		dashPart.direction.y=1
-	
+	#Sets a starting position for use in the effect
+	var startingPos=global_position
 	#Sets a target end position for the dash, based on the strengh, and the direction you are moving
 	var dashTarget = global_position+(Vector2(dashDist,dashDist)*dashDirection)
 	print(global_position,dashTarget)
@@ -86,5 +87,15 @@ func dash():
 	global_position=dashTarget
 	#Allows for normal player movement again
 	print("done")
+	for i in effectCount:
+		var instance = dashEffect.instantiate()
+		get_parent().add_child(instance)
+		#Handles x
+		instance.global_position.x=startingPos.x+(dashDist*(i)*dashDirection.x)
+		#Handles y
+		instance.global_position.y=startingPos.y+((dashDist*(i))*dashDirection.y)
+		#Flips the sprite of the effect, if needed
+		instance.flip_h=animated_sprite_2d.flip_h
+		print("sfx",instance.global_position)
 	normalMove =true
 	
