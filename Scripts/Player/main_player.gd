@@ -1,18 +1,18 @@
 extends CharacterBody2D
 
 #Constants
-const SPEED = 300.0
+const SPEED = 200.0
 
 #Varibales
 @export var health: int = 100
 var normalMove:bool =true
-@export var dashDist:int=80
+@export var dashDist:int=60
 @export var effectCount:int=5
 
 #Onreadys
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dashCD: Timer = $dashCD
-@onready var dashPart:CPUParticles2D=$dashPart
+@onready var dashCast:RayCast2D=$dashCast
 #Preloads
 @onready var dashEffect=preload("res://Scenes/Players/dash_effect.tscn")
 
@@ -56,24 +56,18 @@ func _physics_process(delta: float) -> void:
 		
 			
 func dash():
-	#Resets the particles
-	dashPart.direction=Vector2(0,0)
 	#Makes the dash direction start as 0,0
 	var dashDirection:Vector2=Vector2(0,0)
 	#Sets the current dash direction to which direction you are moving
 	if(velocity.x>0):
 		dashDirection.x=1
-		dashPart.direction.x=-1
 	elif(velocity.x<0):
 		dashDirection.x=-1
-		dashPart.direction.x=1
 	if(velocity.y>0):
 		dashDirection.y=1
-		dashPart.direction.y=-1
-
 	elif(velocity.y<0):
 		dashDirection.y=-1
-		dashPart.direction.y=1
+	#sets the direction of the dash 
 	#Sets a starting position for use in the effect
 	var startingPos=global_position
 	#Sets a target end position for the dash, based on the strengh, and the direction you are moving
@@ -83,19 +77,18 @@ func dash():
 	normalMove=false
 	velocity=Vector2(0,0)
 	animated_sprite_2d.play("Dash")
-	dashPart.emitting=true
 	global_position=dashTarget
 	#Allows for normal player movement again
-	print("done")
 	for i in effectCount:
 		var instance = dashEffect.instantiate()
 		get_parent().add_child(instance)
 		#Handles x
-		instance.global_position.x=startingPos.x+(dashDist*(i)*dashDirection.x)
+		instance.global_position.x=startingPos.x+((dashDist/effectCount)*(i)*dashDirection.x)
 		#Handles y
-		instance.global_position.y=startingPos.y+((dashDist*(i))*dashDirection.y)
+		instance.global_position.y=startingPos.y+((dashDist/effectCount)*(i)*dashDirection.y)
 		#Flips the sprite of the effect, if needed
 		instance.flip_h=animated_sprite_2d.flip_h
-		print("sfx",instance.global_position)
+		#Changes the color of the dash
+		instance.modulate.r+=i
 	normalMove =true
 	
