@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ltmw0m4psiys" path="res://Assets/Tilesets/dungeon tileset/Tiles.png" id="1_jkkxa"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="2_uwci4"]
-[ext_resource type="PackedScene" uid="uid://c6mrf76fn7r2o" path="res://Scenes/HUD/canvas_layer.tscn" id="3_opqy1"]
+[ext_resource type="PackedScene" uid="uid://c6mrf76fn7r2o" path="res://Scenes/HUD/hudcanvaslayer.tscn" id="3_opqy1"]
 
 [node name="Node2D" type="Node2D"]
 
