@@ -14,7 +14,7 @@ var normalMove:bool =true
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dashCD: Timer = $dashCD
 @onready var dashCast:RayCast2D=$dashCast
-@onready var lightAttackArea: CollisionShape2D = $lightAttackArea/CollisionShape2D
+@onready var lightAttackColision: CollisionShape2D = $lightAttackArea/CollisionShape2D
 
 #Preloads
 @onready var dashEffect=preload("res://Scenes/Players/dash_effect.tscn")
@@ -113,14 +113,16 @@ func lightAttack():
 	normalMove=false
 	velocity=Vector2(0,0)
 	animated_sprite_2d.play("lightAttack")
+	print("no:")
 	#lightAttackArea.monitoring==true
-	lightAttackArea.disabled==true
+	lightAttackColision.disabled=false
 	#Waits for the animation to finish before allowin for player movement again
 	await(animated_sprite_2d.animation_finished)
 	normalMove=true
 	#Disables attack Area
 	#lightAttackArea.monitoring==false
-	lightAttackArea.disabled==false
+	lightAttackColision.disabled=true
+
 
 	
 
