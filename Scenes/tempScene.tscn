@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://xb7cvnmogeb8"]
+[gd_scene load_steps=5 format=3 uid="uid://xb7cvnmogeb8"]
 
 [ext_resource type="Texture2D" uid="uid://ltmw0m4psiys" path="res://Assets/Tilesets/dungeon tileset/Tiles.png" id="1_jkkxa"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="2_uwci4"]
@@ -14,10 +14,11 @@ texture = ExtResource("1_jkkxa")
 [node name="Player" parent="." instance=ExtResource("2_uwci4")]
 position = Vector2(-67, -124)
 
-[node name="ParentCanvasLayer" parent="." instance=ExtResource("3_opqy1")]
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(-2, -19)
 position_smoothing_enabled = true
+
+[node name="ParentCanvasLayer" parent="." instance=ExtResource("3_opqy1")]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 

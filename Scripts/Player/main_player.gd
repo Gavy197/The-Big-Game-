@@ -1,10 +1,20 @@
 extends CharacterBody2D
 
+#signals
+signal healthChanged
+
+
 #Constants
 const SPEED = 200.0
 
 #Varibales
-@export var health: int = 100
+@export var currentHealth: int = 100
+#Varibales
+@export var inventory: Inventory
+@export var maxHealth: int = 100
+
+
+
 var normalMove:bool =true
 @export var dashDist:int=60
 @export var dashCooldown=2
