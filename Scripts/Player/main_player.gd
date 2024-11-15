@@ -50,11 +50,10 @@ func _physics_process(delta: float) -> void:
 		#Flips spirte when going left
 		if hDirection<0:
 			#animated_sprite_2d.flip_h=true
-			scale.x=-1
+			scale.x=-scale.y
 		elif hDirection>0:
 			#animated_sprite_2d.flip_h=false
-			scale.x=1
-			print("right")
+			scale.x=scale.y
 	move_and_slide()
 
 #Detects inputs for all other actions (dashing, attacking,ect)
@@ -105,7 +104,7 @@ func dash():
 			#Handles y
 			instance.global_position.y=startingPos.y+((dashDist/effectCount)*(i)*dashDirection.y)
 			#Flips the sprite of the effect, if needed
-			instance.flip_h=animated_sprite_2d.flip_h
+			instance.flip_h=dashDirection.x
 			#Changes the color of the dash
 			instance.modulate.r+=i
 		#Restarts the cooldown
@@ -116,7 +115,6 @@ func lightAttack():
 	normalMove=false
 	velocity=Vector2(0,0)
 	animated_sprite_2d.play("lightAttack")
-	print("no:")
 	#lightAttackArea.monitoring==true
 	lightAttackColision.disabled=false
 	#Waits for the animation to finish before allowin for player movement again
