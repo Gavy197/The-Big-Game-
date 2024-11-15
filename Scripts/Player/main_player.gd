@@ -49,9 +49,12 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("Idle")
 		#Flips spirte when going left
 		if hDirection<0:
-			animated_sprite_2d.flip_h=true
+			#animated_sprite_2d.flip_h=true
+			scale.x=-1
 		elif hDirection>0:
-			animated_sprite_2d.flip_h=false
+			#animated_sprite_2d.flip_h=false
+			scale.x=1
+			print("right")
 	move_and_slide()
 
 #Detects inputs for all other actions (dashing, attacking,ect)
