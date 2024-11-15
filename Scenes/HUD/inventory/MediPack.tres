@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cudhgrr6u4258"]
+
+[ext_resource type="Script" path="res://Scenes/HUD/inventory/inventoryItem.gd" id="1_kqd2v"]
+[ext_resource type="Texture2D" uid="uid://bchkrnpyx3xfx" path="res://Assets/Pickups/Medipack.png" id="2_r1ax3"]
+
+[resource]
+script = ExtResource("1_kqd2v")
+name = "MediPack"
+texture = ExtResource("2_r1ax3")

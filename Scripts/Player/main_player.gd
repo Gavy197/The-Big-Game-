@@ -12,6 +12,7 @@ const SPEED = 200.0
 #Varibales
 #@export var inventory: Inventory
 @export var maxHealth: int = 100
+@export var inventory: Inventory
 
 
 

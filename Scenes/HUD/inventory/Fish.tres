@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://4kx0vxan4yow"]
+
+[ext_resource type="Script" path="res://Scenes/HUD/inventory/inventoryItem.gd" id="1_ct6ab"]
+[ext_resource type="Texture2D" uid="uid://b86bki1d7lksh" path="res://Assets/Pickups/Fish.png" id="2_wmg1a"]
+
+[resource]
+script = ExtResource("1_ct6ab")
+name = "Fish"
+texture = ExtResource("2_wmg1a")

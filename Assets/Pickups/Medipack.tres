@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://d2kaxv2ocgqx2"]
-
-[ext_resource type="Script" path="res://Scenes/HUD/inventory/inventoryItem.gd" id="1_vcj6i"]
-[ext_resource type="Texture2D" uid="uid://b6un65bejcyi8" path="res://Scenes/Pickups/Medipack.png" id="2_80odc"]
-
-[resource]
-script = ExtResource("1_vcj6i")
-name = ""
-texture = ExtResource("2_80odc")

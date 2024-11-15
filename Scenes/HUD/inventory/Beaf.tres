@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://84j32ai4ydnt"]
+
+[ext_resource type="Script" path="res://Scenes/HUD/inventory/inventoryItem.gd" id="1_3floh"]
+[ext_resource type="Texture2D" uid="uid://c3vbofrdxrixy" path="res://Assets/Pickups/Beaf.png" id="2_net2t"]
+
+[resource]
+script = ExtResource("1_3floh")
+name = "Beaf"
+texture = ExtResource("2_net2t")
