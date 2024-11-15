@@ -12,12 +12,16 @@ texture = ExtResource("1_jkkxa")
 
 [node name="Player" parent="." instance=ExtResource("2_uwci4")]
 position = Vector2(-67, -124)
+health = null
+dashDist = null
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(-2, -19)
 position_smoothing_enabled = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(88, -117)
