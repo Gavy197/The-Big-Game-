@@ -49,11 +49,12 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("Idle")
 		#Flips spirte when going left
 		if hDirection<0:
-			#Flips player and all children
-			scale.x=scale.y*-1
+			#animated_sprite_2d.flip_h=true
+			scale.x=-1
 		elif hDirection>0:
-			#Flips player and all children
-			scale.x=scale.y
+			#animated_sprite_2d.flip_h=false
+			scale.x=1
+			print("right")
 	move_and_slide()
 
 #Detects inputs for all other actions (dashing, attacking,ect)
@@ -115,6 +116,7 @@ func lightAttack():
 	normalMove=false
 	velocity=Vector2(0,0)
 	animated_sprite_2d.play("lightAttack")
+	print("no:")
 	#lightAttackArea.monitoring==true
 	lightAttackColision.disabled=false
 	#Waits for the animation to finish before allowin for player movement again
@@ -123,6 +125,10 @@ func lightAttack():
 	#Disables attack Area
 	#lightAttackArea.monitoring==false
 	lightAttackColision.disabled=true
+
+
+	
+
 
 func _on_light_attack_area_body_entered(body: Node2D) -> void:
 	print("hit")
