@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do4ibyxu1e7gf" path="res://Scenes/HUD/inventory/inventory_gui.tscn" id="4_s00ix"]
 [ext_resource type="Script" path="res://Scripts/gui/inventory_gui.gd" id="5_seopk"]
 
-[node name="ParentCanvasLayer" type="CanvasLayer"]
+[node name="Hudcanvaslayer" type="CanvasLayer"]
 script = ExtResource("1_uhhow")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
