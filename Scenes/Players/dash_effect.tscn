@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn8adilvhs7cg"]
+
+[ext_resource type="Texture2D" uid="uid://csnmuemdo7bc4" path="res://Assets/Player/Kinght color silver/_Dash.png" id="1_3i0vc"]
+[ext_resource type="Script" path="res://Scripts/Player/dash_effect.gd" id="2_tla6n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b48rw"]
+atlas = ExtResource("1_3i0vc")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfoni"]
+atlas = ExtResource("1_3i0vc")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2cwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b48rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfoni")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="DashEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_o2cwr")
+autoplay = "default"
+frame_progress = 0.992915
+offset = Vector2(3, -40)
+script = ExtResource("2_tla6n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
