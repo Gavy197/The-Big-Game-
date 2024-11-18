@@ -104,7 +104,10 @@ func dash():
 			#Handles y
 			instance.global_position.y=startingPos.y+((dashDist/effectCount)*(i)*dashDirection.y)
 			#Flips the sprite of the effect, if needed
-			instance.flip_h=dashDirection.x
+			if dashDirection.x<0:
+				instance.flip_h=true
+			else:
+				instance.flip_h=false
 			#Changes the color of the dash
 			instance.modulate.r+=i
 		#Restarts the cooldown
