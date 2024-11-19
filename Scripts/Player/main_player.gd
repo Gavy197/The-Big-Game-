@@ -139,3 +139,10 @@ func lightAttack():
 func _on_light_attack_area_body_entered(body: Node2D) -> void:
 	print("hit")
 	#Enemy detection/damage code will come later
+
+
+
+#func for adding items to inventory
+func _on_hurt_box_area_entered(area):
+	if area.has_method("collect"):
+		area.collect(inventory)
