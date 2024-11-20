@@ -1,13 +1,8 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=8 format=3 uid="uid://ddd1x14o0rkmj"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=3 format=3 uid="uid://ddd1x14o0rkmj"]
 
 [ext_resource type="Script" path="res://Scenes/HUD/inventory/inventoryItem.gd" id="1_y8x2k"]
-[ext_resource type="Resource" uid="uid://84j32ai4ydnt" path="res://Scenes/HUD/inventory/Beaf.tres" id="2_dhbq8"]
-[ext_resource type="Resource" uid="uid://dcjiog5rmrtky" path="res://Scenes/HUD/inventory/Calamari.tres" id="3_u0tw6"]
-[ext_resource type="Resource" uid="uid://cxaoomd6ma8sk" path="res://Scenes/HUD/inventory/Coin.tres" id="4_roaix"]
-[ext_resource type="Resource" uid="uid://4kx0vxan4yow" path="res://Scenes/HUD/inventory/Fish.tres" id="5_v7xim"]
-[ext_resource type="Resource" uid="uid://cudhgrr6u4258" path="res://Scenes/HUD/inventory/MediPack.tres" id="6_jysuo"]
 [ext_resource type="Script" path="res://Scenes/HUD/inventory/inventory.gd" id="7_iylyv"]
 
 [resource]
 script = ExtResource("7_iylyv")
-items = Array[ExtResource("1_y8x2k")]([ExtResource("2_dhbq8"), ExtResource("3_u0tw6"), ExtResource("4_roaix"), ExtResource("5_v7xim"), ExtResource("6_jysuo"), null, ExtResource("5_v7xim"), null, ExtResource("2_dhbq8"), null])
+items = Array[ExtResource("1_y8x2k")]([null, null, null, null, null, null, null, null, null, null])
