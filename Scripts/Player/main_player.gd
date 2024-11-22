@@ -8,7 +8,7 @@ signal healthChanged
 const SPEED = 200.0
 
 #Varibales
-@export var currentHealth: int = 100
+@export var currentHealth: int = 50
 #Varibales
 #@export var inventory: Inventory
 @export var maxHealth: int = 100
@@ -140,9 +140,12 @@ func _on_light_attack_area_body_entered(body: Node2D) -> void:
 	print("hit")
 	#Enemy detection/damage code will come later
 
-
-
+"""
 #func for adding items to inventory
-func _on_hurt_box_area_entered(area):
+func _on_hurt_box_area_entered(area: Area2D):
+	print("pickup")
 	if area.has_method("collect"):
 		area.collect(inventory)
+		print("pickup2")
+"""
+	
