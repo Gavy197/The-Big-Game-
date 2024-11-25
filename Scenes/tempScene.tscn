@@ -2,8 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ltmw0m4psiys" path="res://Assets/Tilesets/dungeon tileset/Tiles.png" id="1_jkkxa"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="2_uwci4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwc06"]
+[ext_resource type="PackedScene" uid="uid://cqc1fhfblf7qh" path="res://Scenes/Enemies/goblin.tscn" id="3_lsvcc"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,10 +17,5 @@ position = Vector2(-67, -124)
 position = Vector2(-2, -19)
 position_smoothing_enabled = true
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-collision_layer = 2
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(88, -117)
-shape = SubResource("RectangleShape2D_pwc06")
+[node name="Goblin" parent="." instance=ExtResource("3_lsvcc")]
+position = Vector2(50, -127)
