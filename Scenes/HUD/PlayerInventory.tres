@@ -1,10 +1,8 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=5 format=3 uid="uid://ddd1x14o0rkmj"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=3 format=3 uid="uid://ddd1x14o0rkmj"]
 
 [ext_resource type="Script" path="res://Scenes/HUD/inventory/inventoryItem.gd" id="1_y8x2k"]
-[ext_resource type="Resource" uid="uid://84j32ai4ydnt" path="res://Scenes/HUD/inventory/Beaf.tres" id="2_yhkbg"]
-[ext_resource type="Resource" uid="uid://4kx0vxan4yow" path="res://Scenes/HUD/inventory/Fish.tres" id="3_0dei6"]
 [ext_resource type="Script" path="res://Scenes/HUD/inventory/inventory.gd" id="7_iylyv"]
 
 [resource]
 script = ExtResource("7_iylyv")
-items = Array[ExtResource("1_y8x2k")]([ExtResource("2_yhkbg"), ExtResource("3_0dei6"), null, null, null, null, null, null, null, null])
+items = Array[ExtResource("1_y8x2k")]([null, null, null, null, null, null, null, null, null, null])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bo3q1nxbpek1r"]
+[gd_scene load_steps=44 format=3 uid="uid://bo3q1nxbpek1r"]
 
 [ext_resource type="Script" path="res://Scripts/Player/main_player.gd" id="1_ajyaa"]
 [ext_resource type="Texture2D" uid="uid://byajguxicw3v" path="res://Assets/Player/Kinght color silver/_Idle.png" id="1_oog4x"]
@@ -266,6 +266,9 @@ size = Vector2(21, 38)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccvrk"]
 size = Vector2(77, 43)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g1xw"]
+size = Vector2(20, 26)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ajyaa")
 inventory = ExtResource("2_clcfm")
@@ -300,4 +303,11 @@ target_position = Vector2(30, 0)
 position = Vector2(22.5, -21.5)
 shape = SubResource("RectangleShape2D_ccvrk")
 
+[node name="PickupArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+position = Vector2(-1, -13)
+shape = SubResource("RectangleShape2D_7g1xw")
+
 [connection signal="body_entered" from="lightAttackArea" to="." method="_on_light_attack_area_body_entered"]
+[connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_area_entered"]

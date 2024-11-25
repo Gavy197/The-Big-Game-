@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw5jlrp6pyuh0"]
+[gd_scene load_steps=5 format=3 uid="uid://dw5jlrp6pyuh0"]
 
 [ext_resource type="Script" path="res://Scripts/gui/collectable.gd" id="1_2s37u"]
 [ext_resource type="Texture2D" uid="uid://b02y24kpv76km" path="res://Assets/Pickups/GoldCoin.png" id="2_7rv6c"]
+[ext_resource type="Resource" uid="uid://cxaoomd6ma8sk" path="res://Scenes/HUD/inventory/Coin.tres" id="2_of0u8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddvef"]
 size = Vector2(7, 6)
 
 [node name="coin" type="Area2D"]
 script = ExtResource("1_2s37u")
+itemRes = ExtResource("2_of0u8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)

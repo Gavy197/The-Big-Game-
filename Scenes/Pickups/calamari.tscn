@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://kqq4oqmw834m"]
+[gd_scene load_steps=5 format=3 uid="uid://kqq4oqmw834m"]
 
 [ext_resource type="Script" path="res://Scripts/gui/collectable.gd" id="1_sf3um"]
 [ext_resource type="Texture2D" uid="uid://crghql4g7hjd7" path="res://Assets/Pickups/Calamari.png" id="2_qxdfj"]
+[ext_resource type="Resource" uid="uid://dcjiog5rmrtky" path="res://Scenes/HUD/inventory/Calamari.tres" id="2_ynj5e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hq8kp"]
 size = Vector2(7, 6)
 
 [node name="calamari" type="Area2D"]
 script = ExtResource("1_sf3um")
+itemRes = ExtResource("2_ynj5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)

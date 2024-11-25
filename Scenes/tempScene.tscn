@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://xb7cvnmogeb8"]
+[gd_scene load_steps=9 format=3 uid="uid://xb7cvnmogeb8"]
 
 [ext_resource type="Texture2D" uid="uid://ltmw0m4psiys" path="res://Assets/Tilesets/dungeon tileset/Tiles.png" id="1_jkkxa"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="2_uwci4"]
 [ext_resource type="PackedScene" uid="uid://c6mrf76fn7r2o" path="res://Scenes/HUD/hudcanvaslayer.tscn" id="3_opqy1"]
 [ext_resource type="PackedScene" uid="uid://dsxuyvwn1ehdy" path="res://Scenes/Pickups/beaf.tscn" id="4_temte"]
 [ext_resource type="PackedScene" uid="uid://kqq4oqmw834m" path="res://Scenes/Pickups/calamari.tscn" id="5_rdrkd"]
+[ext_resource type="PackedScene" uid="uid://clqnhy71jj6w8" path="res://Scenes/Pickups/medipack.tscn" id="6_0dug2"]
+[ext_resource type="PackedScene" uid="uid://dw5jlrp6pyuh0" path="res://Scenes/Pickups/coin.tscn" id="7_fhepc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwc06"]
 
@@ -34,5 +36,11 @@ position = Vector2(-124, -82)
 
 [node name="calamari" parent="." instance=ExtResource("5_rdrkd")]
 position = Vector2(-89, -76)
+
+[node name="medipack" parent="." instance=ExtResource("6_0dug2")]
+position = Vector2(-165, -154)
+
+[node name="coin" parent="." instance=ExtResource("7_fhepc")]
+position = Vector2(67, -176)
 
 [connection signal="area_entered" from="beaf2" to="Player" method="_on_beaf_2_area_entered"]
