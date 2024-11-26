@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cqc1fhfblf7qh"]
+[gd_scene load_steps=27 format=3 uid="uid://cqc1fhfblf7qh"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/baseEnemyClass.gd" id="1_qid7o"]
 [ext_resource type="Texture2D" uid="uid://bo7u0lm12fpq5" path="res://Assets/Enemies/Goblin/S_Attack.png" id="2_4q5c0"]
@@ -164,6 +164,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3q3jc"]
 size = Vector2(23.5, 25)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxvsx"]
+radius = 192.167
+
 [node name="Goblin" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
@@ -180,3 +183,11 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.75, -1.5)
 shape = SubResource("RectangleShape2D_3q3jc")
+
+[node name="Targeting" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Targeting"]
+shape = SubResource("CircleShape2D_mxvsx")
+
+[connection signal="body_entered" from="Targeting" to="." method="_on_targeting_body_entered"]
+[connection signal="body_exited" from="Targeting" to="." method="_on_targeting_body_exited"]
