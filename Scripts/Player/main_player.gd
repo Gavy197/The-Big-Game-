@@ -22,6 +22,12 @@ var normalMove:bool =true
 func _ready() -> void:
 	dashCD.wait_time=dashCooldown
 func _physics_process(delta: float) -> void:
+	#frequently updates dash checker
+	if velocity!=Vector2(0,0):
+		#Sets the size of the dash ray to how far you are dashing
+		dashCast.target_position=Vector2(abs(dashDist*velocity.sign().x),dashDist*velocity.sign().y)
+		#print(dashDist*velocity.sign())
+		print(dashCast.target_position)
 	#Handles movement animations
 	if normalMove==true:
 		# Handles walking left/right.
@@ -80,11 +86,8 @@ func dash():
 		dashDirection.y=1
 	elif(velocity.y<0):
 		dashDirection.y=-1
-	#Sets the size of the dash ray to how far you are dashing
-	dashCast.target_position==Vector2(dashDist*dashDirection.x,dashDist*dashDirection.y)
 	#Makes sure the target area is clear of obstacles
 	if dashCast.is_colliding()==false:
-		#sets the direction of the dash 
 		#Sets a starting position for use in the effect
 		var startingPos=global_position
 		#Sets a target end position for the dash, based on the strengh, and the direction you are moving
