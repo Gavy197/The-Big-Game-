@@ -266,15 +266,17 @@ size = Vector2(21, 38)
 size = Vector2(77, 43)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 4
 script = ExtResource("1_ajyaa")
 dashCooldown = 1
 effectCount = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 19)
 position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -40)
+position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_0d5q4")
 animation = &"Idle"
 autoplay = "Idle"
@@ -282,18 +284,19 @@ frame_progress = 0.459707
 offset = Vector2(4, 0)
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -19)
+position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_nj36b")
 
 [node name="dashCD" type="Timer" parent="."]
 one_shot = true
 
 [node name="dashCast" type="RayCast2D" parent="."]
-position = Vector2(0, -19)
 target_position = Vector2(40, 0)
+collide_with_areas = true
 
 [node name="lightAttackArea" type="Area2D" parent="."]
-collision_layer = 2
+position = Vector2(0, 19)
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lightAttackArea"]

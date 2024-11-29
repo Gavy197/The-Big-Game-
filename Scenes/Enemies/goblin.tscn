@@ -169,7 +169,7 @@ radius = 192.167
 
 [node name="Goblin" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 script = ExtResource("1_qid7o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -185,9 +185,17 @@ position = Vector2(0.75, -1.5)
 shape = SubResource("RectangleShape2D_3q3jc")
 
 [node name="Targeting" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Targeting"]
 shape = SubResource("CircleShape2D_mxvsx")
+
+[node name="WallCheck" type="RayCast2D" parent="."]
+modulate = Color(0.913725, 0.0627451, 0.0941176, 1)
+target_position = Vector2(20, 0)
+collision_mask = 2
+collide_with_areas = true
 
 [connection signal="body_entered" from="Targeting" to="." method="_on_targeting_body_entered"]
 [connection signal="body_exited" from="Targeting" to="." method="_on_targeting_body_exited"]

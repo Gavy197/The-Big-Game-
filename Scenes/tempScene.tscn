@@ -18,4 +18,4 @@ position = Vector2(-2, -19)
 position_smoothing_enabled = true
 
 [node name="Goblin" parent="." instance=ExtResource("3_lsvcc")]
-position = Vector2(50, -127)
+position = Vector2(191, -142)
