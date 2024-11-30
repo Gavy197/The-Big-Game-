@@ -256,7 +256,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"lightAttack",
-"speed": 15.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nj36b"]
@@ -279,9 +279,10 @@ position_smoothing_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_0d5q4")
-animation = &"Idle"
+animation = &"lightAttack"
 autoplay = "Idle"
-frame_progress = 0.459707
+frame = 3
+frame_progress = 1.0
 offset = Vector2(4, 0)
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
