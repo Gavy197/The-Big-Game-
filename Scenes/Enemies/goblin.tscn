@@ -126,7 +126,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8ggfg")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 10.0
 }, {
@@ -172,17 +172,15 @@ radius = 192.167
 radius = 18.1108
 
 [node name="Goblin" type="CharacterBody2D"]
-modulate = Color(1, 0, 0, 1)
 collision_layer = 2
 script = ExtResource("1_fxng5")
+health = 15
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_fo71e")
-animation = &"Attack"
+animation = &"Death"
 autoplay = "Walking"
-frame = 5
-frame_progress = 1.0
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -19,6 +19,8 @@ var inRange:bool=false
 @onready var wallCheck: RayCast2D = $WallCheck
 @onready var attentionTimer: Timer = $attentionTimer
 @onready var attackRange: Area2D = $AttackRange
+#Preloads
+@onready var dmgIndicator=preload("res://Scenes/Enemies/dmg_indicator.tscn")
 
 func _ready():
 	#Picks a starting direction
@@ -91,24 +93,23 @@ func _on_targeting_body_entered(body:Node2D) -> void:
 	if body.name=="Player":
 		#Sets the target varible to the body it sees(the player)
 		target=body
-		print("I SEE YOU")
 		#Stops the attention timer
 		attentionTimer.stop()
 
 
 
 func _on_targeting_body_exited(body:Node2D) -> void:
-	#Makes sure it can only track the player
-	if body.name=="Player":
-		#Starts the attention timer, 
-		#once it runs out the enemy losses intrests 
-		#and picks a random direction again
-		attentionTimer.start()
-		print("I DON'T SEE YOU")
+	#This is only here to prevent a werid error
+	if health>0:
+		#Makes sure it can only track the player
+		if body==target:
+			#Starts the attention timer, 
+			#once it runs out the enemy losses intrests 
+			#and picks a random direction again
+			attentionTimer.start()
 
 
 func _on_wall_check_is_colliding() -> void:
-	print("collide!")
 	#Instantly turns if it's not targeting something
 	if target==null:
 		pickDir()
@@ -117,7 +118,6 @@ func _on_wall_check_is_colliding() -> void:
 		attentionTimer.start()
 
 func _on_wall_check_not_colliding() -> void:
-	print("no collide!")
 	#If the it has started to lose intrest in the player
 	#(the attention timer started), then it'll stop the timer
 	if attentionTimer.time_left<3 and attentionTimer.time_left>0:

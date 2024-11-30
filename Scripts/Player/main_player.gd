@@ -93,7 +93,6 @@ func dash():
 		var startingPos=global_position
 		#Sets a target end position for the dash, based on the strengh, and the direction you are moving
 		var dashTarget = global_position+(Vector2(dashDist,dashDist)*dashDirection)
-		print(global_position,dashTarget)
 		#Stops the movement animations from overiding this one
 		normalMove=false
 		velocity=Vector2(0,0)
@@ -134,10 +133,9 @@ func lightAttack():
 
 func takeDamage(amount:int):
 	health-=amount
-	print(health)
+	print("player ",health)
 
 
 func _on_light_attack_area_body_entered(body: Node2D) -> void:
 	if(body is Enemy):
-		print("hit")
 		body.takeDamage(lightAttackDmg*dmgMultiplier)
