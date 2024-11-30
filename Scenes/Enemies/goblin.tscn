@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://cqc1fhfblf7qh"]
+[gd_scene load_steps=29 format=3 uid="uid://cqc1fhfblf7qh"]
 
-[ext_resource type="Script" path="res://Scripts/Enemies/baseEnemyClass.gd" id="1_qid7o"]
+[ext_resource type="Script" path="res://Scripts/Enemies/goblin.gd" id="1_fxng5"]
 [ext_resource type="Texture2D" uid="uid://bo7u0lm12fpq5" path="res://Assets/Enemies/Goblin/S_Attack.png" id="2_4q5c0"]
 [ext_resource type="Texture2D" uid="uid://dl267pr1kyaqv" path="res://Assets/Enemies/Goblin/S_Death.png" id="3_7d6h4"]
 [ext_resource type="Texture2D" uid="uid://buelf4rucnrkb" path="res://Assets/Enemies/Goblin/S_Walk.png" id="4_hslef"]
+[ext_resource type="Script" path="res://Scripts/Enemies/wall_check.gd" id="5_y53d3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cuw8s"]
 atlas = ExtResource("2_4q5c0")
@@ -102,7 +103,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qmu40")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
 "speed": 10.0
 }, {
@@ -167,24 +168,30 @@ size = Vector2(23.5, 25)
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxvsx"]
 radius = 192.167
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1rc8a"]
+radius = 18.1108
+
 [node name="Goblin" type="CharacterBody2D"]
+modulate = Color(1, 0, 0, 1)
 collision_layer = 2
-collision_mask = 0
-script = ExtResource("1_qid7o")
+script = ExtResource("1_fxng5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_fo71e")
-animation = &"Walking"
+animation = &"Attack"
 autoplay = "Walking"
-frame_progress = 0.963267
+frame = 5
+frame_progress = 1.0
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0.75, -1.5)
 shape = SubResource("RectangleShape2D_3q3jc")
 
 [node name="Targeting" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -193,9 +200,25 @@ shape = SubResource("CircleShape2D_mxvsx")
 
 [node name="WallCheck" type="RayCast2D" parent="."]
 modulate = Color(0.913725, 0.0627451, 0.0941176, 1)
-target_position = Vector2(20, 0)
-collision_mask = 2
 collide_with_areas = true
+script = ExtResource("5_y53d3")
+
+[node name="attentionTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="AttackRange" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_1rc8a")
 
 [connection signal="body_entered" from="Targeting" to="." method="_on_targeting_body_entered"]
 [connection signal="body_exited" from="Targeting" to="." method="_on_targeting_body_exited"]
+[connection signal="isColliding" from="WallCheck" to="." method="_on_wall_check_is_colliding"]
+[connection signal="notColliding" from="WallCheck" to="." method="_on_wall_check_not_colliding"]
+[connection signal="timeout" from="attentionTimer" to="." method="_on_attention_timer_timeout"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]

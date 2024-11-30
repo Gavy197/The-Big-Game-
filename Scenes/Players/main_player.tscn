@@ -260,12 +260,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nj36b"]
-size = Vector2(16, 21.5)
+size = Vector2(16, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccvrk"]
 size = Vector2(77, 43)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 4
 script = ExtResource("1_ajyaa")
 dashCooldown = 1

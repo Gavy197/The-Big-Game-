@@ -9,7 +9,9 @@ var normalMove:bool =true
 @export var dashDist:int=60
 @export var dashCooldown=2
 @export var effectCount:int=5
-
+#Attacking Variables
+var lightAttackDmg:int =2
+var dmgMultiplier=1
 #Onreadys
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dashCD: Timer = $dashCD
@@ -26,8 +28,7 @@ func _physics_process(delta: float) -> void:
 	if velocity!=Vector2(0,0):
 		#Sets the size of the dash ray to how far you are dashing
 		dashCast.target_position=Vector2(abs(dashDist*velocity.sign().x),dashDist*velocity.sign().y)
-		#print(dashDist*velocity.sign())
-		print(dashCast.target_position)
+
 	#Handles movement animations
 	if normalMove==true:
 		# Handles walking left/right.
@@ -131,9 +132,12 @@ func lightAttack():
 	lightAttackColision.disabled=true
 
 
-	
+func takeDamage(amount:int):
+	health-=amount
+	print(health)
 
 
 func _on_light_attack_area_body_entered(body: Node2D) -> void:
-	print("hit")
-	#Enemy detection/damage code will come later
+	if(body is Enemy):
+		print("hit")
+		body.takeDamage(lightAttackDmg*dmgMultiplier)
