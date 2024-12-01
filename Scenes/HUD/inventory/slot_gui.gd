@@ -1,4 +1,5 @@
-extends Panel
+extends Button
+#chaged slot from a panel to a button so you can now assign mouse clicks ont he slots
 
 @onready var backgroundSprite: Sprite2D = $background
 @onready var itemSprite: Sprite2D = $CenterContainer/Panel/item
@@ -18,3 +19,9 @@ func update(slot: InventorySlot):
 		itemSprite.texture = slot.item.texture
 		amountLabel.visible = true
 		amountLabel.text = str(slot.amount)
+
+
+
+
+func onSlotClicked() -> void:
+	pass # Replace with function body.
