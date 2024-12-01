@@ -279,10 +279,8 @@ position_smoothing_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_0d5q4")
-animation = &"lightAttack"
+animation = &"Idle"
 autoplay = "Idle"
-frame = 3
-frame_progress = 1.0
 offset = Vector2(4, 0)
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
