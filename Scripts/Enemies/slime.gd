@@ -33,14 +33,15 @@ func attack():
 
 
 func death():
-	#Prevent death cloning
-	canClone=false
-	#locks movement
-	canMove=false
-	velocity=Vector2.ZERO
-	animated_sprite_2d.play("Death")
-	await(animated_sprite_2d.animation_finished)
-	queue_free()
+	if dying==false:
+		#Prevent death cloning
+		canClone=false
+		#locks movement
+		canMove=false
+		velocity=Vector2.ZERO
+		animated_sprite_2d.play("Death")
+		await(animated_sprite_2d.animation_finished)
+		queue_free()
 
 func takeDamage(amount:int):
 	#Makes the slime take more damage if it's a clone
@@ -56,6 +57,7 @@ func takeDamage(amount:int):
 	print("slime",generation," ",health)
 	if health<=0:
 		death()
+		dying=true
 
 
 #Splits into 2 Slimes
@@ -64,7 +66,6 @@ func _on_ability_timer_timeout() -> void:
 	if canClone==true:
 		#Stops the slimes from making infinite clones
 		if generation<=4:
-			print(generation)
 			#Locks movement
 			canMove=false
 			velocity=Vector2.ZERO

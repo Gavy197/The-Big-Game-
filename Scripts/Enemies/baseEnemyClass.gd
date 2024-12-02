@@ -8,6 +8,7 @@ enum enemyType {melee,ranged,other}
 var target:CharacterBody2D
 var canMove:bool=true
 var inRange:bool=false
+var dying:bool=false
 #Exported variables
 @export var speed = 100.0
 @export var enemyBehavior:enemyType
@@ -77,7 +78,8 @@ func _physics_process(delta: float) -> void:
 		elif enemyBehavior==enemyType.ranged:
 			pass
 	move_and_slide()
-
+	
+	
 #Abstract attack function
 func attack():
 	pass
