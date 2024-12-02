@@ -76,7 +76,12 @@ func _physics_process(delta: float) -> void:
 			#Sets the direction based on where it's trying to move
 			direction=Vector2(cos(targetAngle),sin(targetAngle))
 		elif enemyBehavior==enemyType.ranged:
-			pass
+			var targetAngle=get_angle_to(target.global_position)
+			if canMove==true:
+				#Sets the velocity based on the angle
+				velocity=Vector2(cos(targetAngle)*speed,sin(targetAngle)*speed)
+			#Sets the direction based on where it's trying to move
+			direction=Vector2(cos(targetAngle),sin(targetAngle))
 	move_and_slide()
 	
 	
