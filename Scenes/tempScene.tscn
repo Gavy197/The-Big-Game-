@@ -13,8 +13,6 @@ texture = ExtResource("1_jkkxa")
 
 [node name="Player" parent="." instance=ExtResource("2_uwci4")]
 position = Vector2(-67, -124)
-health = 100
-dashDist = 60
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(-2, -19)
