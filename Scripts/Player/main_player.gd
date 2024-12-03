@@ -134,3 +134,5 @@ func lightAttack():
 func _on_light_attack_area_body_entered(body: Node2D) -> void:
 	print("hit")
 	#Enemy detection/damage code will come later
+				
+ 
