@@ -21,7 +21,7 @@ var normalMove:bool =true
 
 func _ready() -> void:
 	dashCD.wait_time=dashCooldown
-func _physics_process(delta: float) -> void:
+ func _physics_process(delta: float) -> void:
 	#Handles movement animations
 	if normalMove==true:
 		# Handles walking left/right.
