@@ -8,7 +8,7 @@ signal healthChanged
 const SPEED = 200.0
 
 #Varibales
-@export var currentHealth: int = 50
+@export var currentHealth: int = 10
 #Varibales
 #@export var inventory: Inventory
 @export var maxHealth: int = 100
@@ -143,8 +143,6 @@ func _on_light_attack_area_body_entered(body: Node2D) -> void:
 
 
 func _on_pickup_area_area_entered(area: Area2D) -> void:
-	print("Pickup")
 	if area.has_method("collect"):
-		print("pickupin")
 		area.collect(inventory)
 	 

@@ -17,3 +17,32 @@ func insert(item: InventoryItem):
 			emptySlots[0].amount = 1
 			
 	updated.emit()
+#func remove(item: InventoryItem):
+	#slots.erase(item)
+	
+	
+func removeSlot(inventorySlot: InventorySlot):
+	var index = slots.find(inventorySlot)
+	if index < 0: return
+	
+	slots[index] = inventorySlot.new()
+	updated.emit()
+	remove_at_index(index)
+	
+	
+func remove_at_index(index: int) -> void:
+	slots[index] = InventorySlot.new()
+	updated.emit()
+	
+	
+func insertSlot(index: int, inventorySlot: InventorySlot):
+	slots[index] = inventorySlot
+	updated.emit()
+	
+	
+func use_item_at_index(index: int) -> void:
+	if index < 0 || index >= slots.size() || !slots[index].item: return
+	remove_at_index(index)
+	
+	
+	

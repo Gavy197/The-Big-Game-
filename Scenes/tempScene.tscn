@@ -13,7 +13,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 1)
+position = Vector2(0, -1)
 texture = ExtResource("1_jkkxa")
 
 [node name="Player" parent="." instance=ExtResource("2_uwci4")]
@@ -42,5 +42,11 @@ position = Vector2(-165, -154)
 
 [node name="coin" parent="." instance=ExtResource("7_fhepc")]
 position = Vector2(67, -176)
+
+[node name="beaf" parent="." instance=ExtResource("4_temte")]
+position = Vector2(-62, -55)
+
+[node name="beaf3" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
 
 [connection signal="area_entered" from="beaf2" to="Player" method="_on_beaf_2_area_entered"]
