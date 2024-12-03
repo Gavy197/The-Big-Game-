@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://dpbywo28tfxty"]
 
-[ext_resource type="Script" path="res://Scripts/Enemies/baseEnemyClass.gd" id="1_axysa"]
+[ext_resource type="Script" path="res://Scripts/Enemies/golem.gd" id="1_0yqa7"]
 [ext_resource type="Texture2D" uid="uid://bc7s650rruhcg" path="res://Assets/Enemies/Golem/Armored/Golem_Armor_AttackC.png" id="2_tbg5x"]
 [ext_resource type="Texture2D" uid="uid://bv2v4rfs4n1at" path="res://Assets/Enemies/Golem/Armored/Golem_Armor_ArmorBreak.png" id="3_pkyeq"]
 [ext_resource type="Texture2D" uid="uid://dax50jm7ptdun" path="res://Assets/Enemies/Golem/No Armor/Golem_DeathB.png" id="4_o506d"]
@@ -225,18 +225,15 @@ animations = [{
 size = Vector2(23.5, 26.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vhnp"]
-radius = 200.0
+radius = 400.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_chvgu"]
 radius = 18.1108
 
 [node name="Golem" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_axysa")
-speed = 80.0
+script = ExtResource("1_0yqa7")
 enemyBehavior = 1
-damage = 10
-health = 30
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
@@ -275,6 +272,10 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource("CircleShape2D_chvgu")
+
+[node name="attackCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="body_entered" from="Targeting" to="." method="_on_targeting_body_entered"]
 [connection signal="body_exited" from="Targeting" to="." method="_on_targeting_body_exited"]

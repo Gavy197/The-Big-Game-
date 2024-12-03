@@ -24,7 +24,7 @@ func attack():
 		if inRange==true:
 			#Makes sure it's not dead
 			if health>0:
-				target.takeDamage(damage)
+				target.takeDamage(damage,self)
 				#Since the target is still in range, it'll attempt to attack again
 				attack()
 		#If it's not in range, start chasing the player again
@@ -53,7 +53,7 @@ func death():
 		#Deletes the wolf
 		queue_free()
 	
-func takeDamage(amount:int):
+func takeDamage(amount:int,attacker:CharacterBody2D):
 	#Creates a dmg indicator with the amout of damage taken
 	var instance = dmgIndicator.instantiate()
 	add_child(instance)

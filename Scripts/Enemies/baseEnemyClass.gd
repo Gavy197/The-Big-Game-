@@ -75,13 +75,7 @@ func _physics_process(delta: float) -> void:
 				velocity=Vector2(cos(targetAngle)*speed,sin(targetAngle)*speed)
 			#Sets the direction based on where it's trying to move
 			direction=Vector2(cos(targetAngle),sin(targetAngle))
-		elif enemyBehavior==enemyType.ranged:
-			var targetAngle=get_angle_to(target.global_position)
-			if canMove==true:
-				#Sets the velocity based on the angle
-				velocity=Vector2(cos(targetAngle)*speed,sin(targetAngle)*speed)
-			#Sets the direction based on where it's trying to move
-			direction=Vector2(cos(targetAngle),sin(targetAngle))
+		
 	move_and_slide()
 	
 	
@@ -92,7 +86,7 @@ func attack():
 func death():
 	pass
 #Abstract death function
-func takeDamage(amount:int):
+func takeDamage(amount:int,attacker:CharacterBody2D):
 	pass
 	
 func _on_targeting_body_entered(body:Node2D) -> void:

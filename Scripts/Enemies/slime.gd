@@ -21,7 +21,7 @@ func attack():
 		#Makes sure the target is still in range
 		if health>0 and inRange==true:
 			#print("attack")
-			target.takeDamage(damage)
+			target.takeDamage(damage,self)
 			#Starts a cooldown before it can attack again
 			attackTimer.start(attackTime)
 			await(attackTimer.timeout)
@@ -43,7 +43,7 @@ func death():
 		await(animated_sprite_2d.animation_finished)
 		queue_free()
 
-func takeDamage(amount:int):
+func takeDamage(amount:int,attacker:CharacterBody2D):
 	#Makes the slime take more damage if it's a clone
 	if(isClone==true):
 		amount+=2

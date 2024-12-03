@@ -2527,3 +2527,7 @@ position = Vector2(-23, 180)
 
 [node name="Golem" parent="." instance=ExtResource("5_8mibh")]
 position = Vector2(-347, 160)
+speed = 100.0
+enemyBehavior = 0
+damage = 5
+health = 50

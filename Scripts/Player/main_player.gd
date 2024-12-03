@@ -131,11 +131,11 @@ func lightAttack():
 	lightAttackColision.disabled=true
 
 
-func takeDamage(amount:int):
+func takeDamage(amount:int,attacker:CharacterBody2D):
 	health-=amount
 	print("player ",health)
 
 
 func _on_light_attack_area_body_entered(body: Node2D) -> void:
 	if(body is Enemy):
-		body.takeDamage(lightAttackDmg*dmgMultiplier)
+		body.takeDamage(lightAttackDmg*dmgMultiplier,self)
