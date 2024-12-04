@@ -10,3 +10,6 @@ func _ready():
 
 func update():
 	value = player.currentHealth * 100 / player.maxHealth
+	
+func _process(delta):
+	update()

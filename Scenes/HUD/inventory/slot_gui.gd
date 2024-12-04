@@ -5,7 +5,6 @@ extends Button
 @onready var itemSprite: Sprite2D = $CenterContainer/Panel/item
 @onready var amountLabel: Label = $CenterContainer/Panel/Label
 @onready var main_player: CharacterBody2D = $"../../../../../Player"
-@onready var HealthBar: TextureProgressBar = $HealthBar
 
 
 
@@ -24,11 +23,11 @@ func update(slot: InventorySlot):
 		amountLabel.visible = true
 		amountLabel.text = str(slot.amount)
 		
-func _ready():
-	main_player.healthChanged.connect(update)
-
+#func _ready():
+	#main_player.healthChanged.connect(update)
+#coin  = <CompressedTexture2D#-9223372000397884039>
 func _on_pressed() -> void:
-	#inventory. remove()
-	main_player.currentHealth += 20
-	print(main_player.currentHealth)
-	pass # Replace with function body.
+	if !itemSprite.texture == ResourceLoader.load("res://Assets/Pickups/GoldCoin.png"):
+		main_player.currentHealth += 20
+		print(main_player.currentHealth)
+		pass
