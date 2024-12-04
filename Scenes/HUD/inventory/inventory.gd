@@ -17,8 +17,7 @@ func insert(item: InventoryItem):
 			emptySlots[0].amount = 1
 			
 	updated.emit()
-#func remove(item: InventoryItem):
-	#slots.erase(item)
+
 	
 	
 func removeSlot(inventorySlot: InventorySlot):

@@ -7,11 +7,10 @@ extends Button
 @onready var main_player: CharacterBody2D = $"../../../../../Player"
 
 
-
 func update(slot: InventorySlot):
 	#if the item is null
 	if !slot.item:
-		#replace backgground sprite to 0
+		#replace background sprite to 0
 		backgroundSprite.frame = 0
 		itemSprite.visible = false
 		amountLabel.visible = false
@@ -23,11 +22,13 @@ func update(slot: InventorySlot):
 		amountLabel.visible = true
 		amountLabel.text = str(slot.amount)
 		
-#func _ready():
-	#main_player.healthChanged.connect(update)
+
 #coin  = <CompressedTexture2D#-9223372000397884039>
+#consume items function
 func _on_pressed() -> void:
-	if !itemSprite.texture == ResourceLoader.load("res://Assets/Pickups/GoldCoin.png"):
-		main_player.currentHealth += 20
-		print(main_player.currentHealth)
-		pass
+	if main_player.currentHealth <= 90:
+		if !itemSprite.texture == ResourceLoader.load("res://Assets/Pickups/GoldCoin.png"):
+			#itemSlots[0].amount -= 1
+			if itemSprite.visible == true:
+				main_player.currentHealth += 10
+				print(main_player.currentHealth)
