@@ -46,6 +46,7 @@ script = ExtResource("1_ua0hd")
 SPEED = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(6, 0)
 shape = SubResource("RectangleShape2D_wp1nd")
 
@@ -57,6 +58,7 @@ autoplay = "default"
 frame_progress = 0.00489247
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
