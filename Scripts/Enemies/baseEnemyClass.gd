@@ -41,6 +41,7 @@ func pickDir():
 	elif randStart ==4:
 		direction=Vector2(0,1)
 	velocity=direction*speed
+	animated_sprite_2d.play("Walking")
 
 func _physics_process(delta: float) -> void:
 	if canMove==true:
@@ -103,7 +104,7 @@ func _on_targeting_body_exited(body:Node2D) -> void:
 	#This is only here to prevent a werid error
 	if health>0:
 		#Makes sure it can only track the player
-		if body==target:
+		if body==target or body==null:
 			#Starts the attention timer, 
 			#once it runs out the enemy losses intrests 
 			#and picks a random direction again

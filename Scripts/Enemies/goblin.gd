@@ -20,13 +20,15 @@ func attack():
 				attack()
 		#If it's not in range, start chasing the player again
 		else:
-			#Fixes velocity for when movement is enabled
-			var targetAngle=get_angle_to(target.global_position)
-			#Sets the velocity based on the angle
-			velocity=Vector2(cos(targetAngle)*speed,sin(targetAngle)*speed)
-			#Enables movement and plays walk animation
-			canMove=true
-			animated_sprite_2d.play("Walking")
+			#Makes sure the target exsists
+			if target!=null:
+				#Fixes velocity for when movement is enabled
+				var targetAngle=get_angle_to(target.global_position)
+				#Sets the velocity based on the angle
+				velocity=Vector2(cos(targetAngle)*speed,sin(targetAngle)*speed)
+				#Enables movement and plays walk animation
+				canMove=true
+				animated_sprite_2d.play("Walking")
 
 func death():
 	if dying==false:
@@ -47,6 +49,8 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 	instance.position.y=-50
 	health-=amount
 	print("goblin ",health)
+	#Changes the target to whoever last attacked
+	target=attacker
 	if health<=0:
 		death()
 		dying=true

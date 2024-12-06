@@ -58,6 +58,8 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 	if health<=0:
 		death()
 		dying=true
+	#Changes the target to whoever last attacked
+	target=attacker
 
 
 #Splits into 2 Slimes

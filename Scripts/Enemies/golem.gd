@@ -56,13 +56,15 @@ func attack():
 		if inRange==true:
 			#Makes sure it's not dead
 			if health>0:
-				#Shoots a projectile
-				var instance=projectile.instantiate()
-				instance.target=target
-				instance.global_position=global_position
-				instance.creator=self
-				instance.damage=damage
-				add_sibling(instance)
+				#Prevents crashes
+				if target!=null:
+					#Shoots a projectile
+					var instance=projectile.instantiate()
+					instance.target=target
+					instance.global_position=global_position
+					instance.creator=self
+					instance.damage=damage
+					add_sibling(instance)
 
 		#Enables movement and plays animation
 		canMove=true
@@ -93,3 +95,5 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 	if health<=0:
 		death()
 		dying=true
+	#Changes the target to whoever last attacked
+	target=attacker

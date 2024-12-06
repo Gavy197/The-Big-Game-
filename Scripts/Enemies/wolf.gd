@@ -65,6 +65,8 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 	if health<=0:
 		death()
 		dying=true
+	#Changes the target to whoever last attacked
+	target=attacker
 
 #This function runs when a nearby wolf dies
 func frenzy(newTarget):
