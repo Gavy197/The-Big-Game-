@@ -24,7 +24,6 @@ func _physics_process(delta: float) -> void:
 			var distance=sqrt((target.global_position.x-global_position.x)**2+(target.global_position.y-global_position.y)**2)
 			var targetAngle=get_angle_to(target.global_position)
 			if canMove==true:
-				print(distance)
 				#If it's outside the attack range, it'll move closer
 				if distance>=attackDistance:
 					#Sets the velocity based on the angle
