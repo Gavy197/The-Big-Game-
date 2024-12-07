@@ -6,6 +6,7 @@ class_name Enemy
 var direction:Vector2=Vector2(0,0)
 enum enemyType {melee,ranged,other}
 var target:CharacterBody2D
+var targetList:Array=[]
 var canMove:bool=true
 var inRange:bool=false
 var dying:bool=false
@@ -84,7 +85,7 @@ func _physics_process(delta: float) -> void:
 func attack():
 	pass
 #Abstract death function
-func death():
+func death(attacker:CharacterBody2D):
 	pass
 #Abstract death function
 func takeDamage(amount:int,attacker:CharacterBody2D):
@@ -95,6 +96,7 @@ func _on_targeting_body_entered(body:Node2D) -> void:
 	if body.name=="Player":
 		#Sets the target varible to the body it sees(the player)
 		target=body
+		targetList.append(body)
 		#Stops the attention timer
 		attentionTimer.stop()
 
@@ -126,9 +128,9 @@ func _on_wall_check_not_colliding() -> void:
 		attentionTimer.stop()
 
 func _on_attention_timer_timeout() -> void:
-	#Stops attempting to follow the player
+	#Stops attempting to follow the target
 	target=null
-	pickDir()
+	targetList=[]
 
 
 func _on_attack_range_body_entered(body: Node2D) -> void:
@@ -139,6 +141,14 @@ func _on_attack_range_body_entered(body: Node2D) -> void:
 
 
 func _on_attack_range_body_exited(body: Node2D) -> void:
+	print(targetList)
 	if target==body:
 		attack()
 		inRange=false
+func resetTarget():
+	if targetList==[]:
+		target=null
+		pickDir()
+	else:
+		target=targetList[0]
+		print(target)

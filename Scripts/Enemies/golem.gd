@@ -73,7 +73,7 @@ func attack():
 		#Starts the cooldown
 		attackCooldown.start()
 
-func death():
+func death(attacker:CharacterBody2D):
 	if dying==false:
 		print("die")
 		#locks movement
@@ -93,7 +93,7 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 	health-=amount
 	print("golem ",health)
 	if health<=0:
-		death()
+		death(attacker)
 		dying=true
 	#Changes the target to whoever last attacked
 	target=attacker

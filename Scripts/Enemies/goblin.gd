@@ -30,7 +30,7 @@ func attack():
 				canMove=true
 				animated_sprite_2d.play("Walking")
 
-func death():
+func death(attacker:CharacterBody2D):
 	if dying==false:
 		print("die")
 		#locks movement
@@ -39,6 +39,7 @@ func death():
 		animated_sprite_2d.play("Death")
 		await(animated_sprite_2d.animation_finished)
 		queue_free()
+		attacker.resetTarget()
 
 func takeDamage(amount:int,attacker:CharacterBody2D):
 	#Creates a dmg indicator with the amout of damage taken
@@ -52,5 +53,5 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 	#Changes the target to whoever last attacked
 	target=attacker
 	if health<=0:
-		death()
+		death(attacker)
 		dying=true

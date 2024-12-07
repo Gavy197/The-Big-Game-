@@ -38,7 +38,7 @@ func attack():
 			animated_sprite_2d.play("Walking")
 
 
-func death():
+func death(attacker:CharacterBody2D):
 	if dying==false:
 		print("die")
 		#locks movement
@@ -63,7 +63,7 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 	health-=amount
 	print("wolf ",health)
 	if health<=0:
-		death()
+		death(attacker)
 		dying=true
 	#Changes the target to whoever last attacked
 	target=attacker

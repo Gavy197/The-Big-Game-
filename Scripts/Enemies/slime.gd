@@ -32,7 +32,7 @@ func attack():
 
 
 
-func death():
+func death(attacker:CharacterBody2D):
 	if dying==false:
 		#Prevent death cloning
 		canClone=false
@@ -56,7 +56,7 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 	health-=amount
 	print("slime",generation," ",health)
 	if health<=0:
-		death()
+		death(attacker)
 		dying=true
 	#Changes the target to whoever last attacked
 	target=attacker
