@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 #Constants
 const SPEED = 200.0
 
