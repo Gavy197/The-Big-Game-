@@ -55,11 +55,15 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 	instance.position.y=-50
 	health-=amount
 	print("slime",generation," ",health)
+	
+	if target!= attacker:
+		inRange=false
+	#Changes the target to whoever last attacked
+	target=attacker
 	if health<=0:
 		death(attacker)
 		dying=true
-	#Changes the target to whoever last attacked
-	target=attacker
+	
 
 
 #Splits into 2 Slimes

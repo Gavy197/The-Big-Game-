@@ -77,7 +77,6 @@ func _physics_process(delta: float) -> void:
 				velocity=Vector2(cos(targetAngle)*speed,sin(targetAngle)*speed)
 			#Sets the direction based on where it's trying to move
 			direction=Vector2(cos(targetAngle),sin(targetAngle))
-		
 	move_and_slide()
 	
 	
@@ -145,7 +144,9 @@ func _on_attack_range_body_exited(body: Node2D) -> void:
 	if target==body:
 		attack()
 		inRange=false
+#Resets the targeting system
 func resetTarget():
+	canMove=true
 	if targetList==[]:
 		target=null
 		pickDir()

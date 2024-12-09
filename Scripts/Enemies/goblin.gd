@@ -39,7 +39,10 @@ func death(attacker:CharacterBody2D):
 		animated_sprite_2d.play("Death")
 		await(animated_sprite_2d.animation_finished)
 		queue_free()
-		attacker.resetTarget()
+		#Makes the attacker reset target if it can
+		if attacker.has_method("resetTarget"):
+			attacker.resetTarget()
+			print("now")
 
 func takeDamage(amount:int,attacker:CharacterBody2D):
 	#Creates a dmg indicator with the amout of damage taken
@@ -50,6 +53,8 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 	instance.position.y=-50
 	health-=amount
 	print("goblin ",health)
+	if target!= attacker:
+		inRange=false
 	#Changes the target to whoever last attacked
 	target=attacker
 	if health<=0:

@@ -1,5 +1,6 @@
 extends Enemy
-
+#Allows for detection by other golems
+class_name Golem
 #exports
 @export var attackDistance:int=200
 #Onreadys
@@ -7,6 +8,7 @@ extends Enemy
 @onready var attackCooldown: Timer = $attackCooldown
 #variables
 var distanceTolerance=120
+var canAttack=true
 #Preloads
 @onready var projectile=preload("res://Scenes/Enemies/golem_projectile.tscn")
 
@@ -27,10 +29,10 @@ func _physics_process(delta: float) -> void:
 			var targetAngle=get_angle_to(target.global_position)
 			if canMove==true:
 				#If it's outside the attack range, it'll move closer
-				if distance>=attackDistance:
+				if distance>attackDistance:
 					#Sets the velocity based on the angle
 					velocity=Vector2(cos(targetAngle)*speed,sin(targetAngle)*speed)
-				elif distance<attackDistance-distanceTolerance:
+				elif distance<distanceTolerance:
 					#Makes it go away from the player
 					velocity=Vector2(cos(targetAngle+PI)*speed,sin(targetAngle+PI)*speed)
 					
@@ -41,9 +43,10 @@ func _physics_process(delta: float) -> void:
 						canMove=false
 						velocity=Vector2.ZERO
 						attack()
+						
+
 			#Sets the direction based on where it's trying to move
 			direction=Vector2(cos(targetAngle),sin(targetAngle))
-			
 #Shoots a pojectile for the attack
 func attack():
 	#Makes sure it's not dead
@@ -64,7 +67,10 @@ func attack():
 					instance.global_position=global_position
 					instance.creator=self
 					instance.damage=damage
+					instance.canAttack=canAttack
 					add_sibling(instance)
+			print(target)
+					
 
 		#Enables movement and plays animation
 		canMove=true
@@ -84,6 +90,7 @@ func death(attacker:CharacterBody2D):
 		queue_free()
 
 func takeDamage(amount:int,attacker:CharacterBody2D):
+	
 	#Creates a dmg indicator with the amout of damage taken
 	var instance = dmgIndicator.instantiate()
 	add_child(instance)
@@ -97,3 +104,22 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 		dying=true
 	#Changes the target to whoever last attacked
 	target=attacker
+	#resets attacking
+	canAttack=false
+	attackCooldown.start()
+
+#Modifies the function that detemines the target, in order to be able to attack other eneimes
+func _on_targeting_body_entered(body:Node2D) -> void:
+	#Allows it to attack eveything thats not a golem
+	if body is Player or body is Enemy and !body is Golem:
+		#Sets the target varible to the body it sees(the player)
+		target=body
+		targetList.append(body)
+		#Stops the attention timer
+		attentionTimer.stop()
+		print(body)
+
+
+func _on_attack_cooldown_timeout() -> void:
+	#Enables attacking
+	canAttack=true
