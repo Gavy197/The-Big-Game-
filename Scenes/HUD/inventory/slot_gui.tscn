@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://jgln0815u8kh"]
+[gd_scene load_steps=3 format=3 uid="uid://jgln0815u8kh"]
 
 [ext_resource type="Script" path="res://Scenes/HUD/inventory/slot_gui.gd" id="1_ij38p"]
 [ext_resource type="Texture2D" uid="uid://bstcxyimfenm0" path="res://Assets/HUD Items/inventorySlot.png" id="1_qeho7"]
-[ext_resource type="Resource" uid="uid://ddd1x14o0rkmj" path="res://Scenes/HUD/PlayerInventory.tres" id="2_8k2so"]
 
 [node name="Slot" type="Button"]
 self_modulate = Color(1, 1, 1, 0)
@@ -10,7 +9,6 @@ custom_minimum_size = Vector2(20, 20)
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_ij38p")
-inventory = ExtResource("2_8k2so")
 
 [node name="background" type="Sprite2D" parent="."]
 texture = ExtResource("1_qeho7")
