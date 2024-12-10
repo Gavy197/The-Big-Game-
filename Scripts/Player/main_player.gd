@@ -57,7 +57,7 @@ func _ready() -> void:
 	move_and_slide()
 
 #Detects inputs for all other actions (dashing, attacking,ect)
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:	
 	#Handles dashing
 	if Input.is_action_just_pressed("Dash"):
 		#Makes sure you are stopped to dash
