@@ -37,7 +37,7 @@ func _on_pressed() -> void:
 #-----------------------------------------------------------------------
 #beef (food) + 5 hp
 	if itemSprite.texture == ResourceLoader.load("res://Assets/Pickups/Beaf.png"):
-		if itemSprite.visible == true and main_player.maxHealth <= 95:
+		if itemSprite.visible == true and main_player.currentHealth <= main_player.maxHealth -5:
 			main_player.currentHealth += 5
 			print(main_player.currentHealth)
 #------------------------------------------------------------------------
@@ -49,7 +49,7 @@ func _on_pressed() -> void:
 #-----------------------------------------------------------------------
 #medpack + 25 hp
 	if itemSprite.texture == ResourceLoader.load("res://Assets/Pickups/Medipack.png"):
-		if itemSprite.visible == true and main_player.maxhealth <= 75:
+		if itemSprite.visible == true and main_player.currentHealth <= 75:
 			main_player.maxHealth += 25
 			print(main_player.maxHealth)
 		
