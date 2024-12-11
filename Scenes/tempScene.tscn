@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xb7cvnmogeb8"]
+[gd_scene load_steps=11 format=3 uid="uid://xb7cvnmogeb8"]
 
 [ext_resource type="Texture2D" uid="uid://ltmw0m4psiys" path="res://Assets/Tilesets/dungeon tileset/Tiles.png" id="1_jkkxa"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="2_uwci4"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://kqq4oqmw834m" path="res://Scenes/Pickups/calamari.tscn" id="5_rdrkd"]
 [ext_resource type="PackedScene" uid="uid://clqnhy71jj6w8" path="res://Scenes/Pickups/medipack.tscn" id="6_0dug2"]
 [ext_resource type="PackedScene" uid="uid://dw5jlrp6pyuh0" path="res://Scenes/Pickups/coin.tscn" id="7_fhepc"]
+[ext_resource type="PackedScene" uid="uid://cg2p4jj37iiyv" path="res://Scenes/Pickups/fish.tscn" id="8_xsx5f"]
+[ext_resource type="Resource" uid="uid://4kx0vxan4yow" path="res://Scenes/HUD/inventory/Fish.tres" id="9_4hd3j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwc06"]
 
@@ -48,5 +50,21 @@ position = Vector2(-62, -55)
 
 [node name="beaf3" parent="." instance=ExtResource("4_temte")]
 position = Vector2(43, -117)
+
+[node name="fish" parent="." instance=ExtResource("8_xsx5f")]
+position = Vector2(-121, -159)
+itemRes = ExtResource("9_4hd3j")
+
+[node name="fish2" parent="." instance=ExtResource("8_xsx5f")]
+position = Vector2(-180, -26)
+
+[node name="calamari2" parent="." instance=ExtResource("5_rdrkd")]
+position = Vector2(121, -185)
+
+[node name="medipack2" parent="." instance=ExtResource("6_0dug2")]
+position = Vector2(-135, -186)
+
+[node name="coin2" parent="." instance=ExtResource("7_fhepc")]
+position = Vector2(-81, -188)
 
 [connection signal="area_entered" from="beaf2" to="Player" method="_on_beaf_2_area_entered"]

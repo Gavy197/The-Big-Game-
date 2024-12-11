@@ -1,6 +1,6 @@
 extends Button
 
-#chaged slot from a panel to a button so you can now assign mouse clicks ont he slots
+#chage slot from a panel to a button
 
 @onready var backgroundSprite: Sprite2D = $background
 @onready var itemSprite: Sprite2D = $CenterContainer/Panel/item
@@ -53,8 +53,7 @@ func _on_pressed() -> void:
 	if selfSlot.amount>0 and selfSlot:
 		if itemSprite.texture == ResourceLoader.load("res://Assets/Pickups/GoldCoin.png"):
 			if itemSprite.visible == true:
-				print(main_player.currentHealth)
-				remove()
+				popup("You can't eat a coin")
 	#-----------------------------------------------------------------------
 	#beef (food) + 5 hp
 		if itemSprite.texture == ResourceLoader.load("res://Assets/Pickups/Beaf.png"):
@@ -63,6 +62,8 @@ func _on_pressed() -> void:
 				popup("+5 HP")
 				print(main_player.currentHealth)
 				remove()
+			else:
+				popup("Too much HP to eat")
 	#------------------------------------------------------------------------
 	#calamri (food) + 10 hp
 		if itemSprite.texture == ResourceLoader.load("res://Assets/Pickups/Calamari.png"):
@@ -71,13 +72,28 @@ func _on_pressed() -> void:
 				popup("+10 HP")
 				print(main_player.currentHealth)
 				remove()
+			else:
+				popup("Too much HP to eat")
 	#-----------------------------------------------------------------------
 	#medpack + 25 hp
 		if itemSprite.texture == ResourceLoader.load("res://Assets/Pickups/Medipack.png"):
-			
 			if itemSprite.visible == true:
 				main_player.maxHealth += 25
 				popup("Max HP increasesd to " + str(main_player.maxHealth))
 				print(main_player.maxHealth)
 				remove()
+			else:
+				popup("Too much HP to eat")
+	#-----------------------------------------------------------------------
+	#fish (food) + 7 hp
+		if itemSprite.texture == ResourceLoader.load("res://Assets/Pickups/Fish.png"):
+			if itemSprite.visible == true and main_player.currentHealth <= main_player.maxHealth - 7:
+				main_player.currentHealth += 7
+				popup("+7 HP")
+				remove()
+				print(main_player.currentHealth)
+			else:
+				popup("Too much HP to eat")
+				
+			
 			

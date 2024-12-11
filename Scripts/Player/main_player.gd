@@ -8,7 +8,7 @@ signal healthChanged
 const SPEED = 200.0
 
 #Varibales
-@export var currentHealth: int = 10
+@export var currentHealth: int = 90
 #Varibales
 #@export var inventory: Inventory
 @export var maxHealth: int = 100

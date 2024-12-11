@@ -12,3 +12,11 @@ func _input(event):
 			
 		else:
 			inventory.open()
+
+#unpause when closed
+func _on_inventory_gui_closed() -> void:
+	get_tree().paused = false
+
+#pause when open
+func _on_inventory_gui_opened() -> void:
+	get_tree().paused = true

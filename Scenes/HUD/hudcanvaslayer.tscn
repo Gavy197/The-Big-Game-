@@ -7,13 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://do4ibyxu1e7gf" path="res://Scenes/HUD/inventory/inventory_gui.tscn" id="4_s00ix"]
 
 [node name="Hudcanvaslayer" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_uhhow")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 offset_left = -2.0
 offset_right = 62.0
-offset_bottom = 40.0
-scale = Vector2(3, 3)
+offset_bottom = 11.0
+scale = Vector2(3.5, 3.5)
 texture_under = ExtResource("3_itwwr")
 texture_progress = ExtResource("4_dmyu4")
 script = ExtResource("1_ovs8a")
@@ -32,3 +33,6 @@ offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
+
+[connection signal="closed" from="InventoryGui" to="." method="_on_inventory_gui_closed"]
+[connection signal="opened" from="InventoryGui" to="." method="_on_inventory_gui_opened"]

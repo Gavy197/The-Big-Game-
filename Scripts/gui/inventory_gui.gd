@@ -22,9 +22,11 @@ func update():
 func open():
 	visible = true
 	isOpen = true
+	get_tree().paused = true
 	opened.emit()
 	
 func close():
+	get_tree().paused = false
 	visible = false
 	isOpen = false
 	closed.emit()
