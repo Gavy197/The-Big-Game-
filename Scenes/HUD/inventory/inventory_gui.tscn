@@ -8,6 +8,8 @@
 custom_minimum_size = Vector2(512, 256)
 layout_mode = 3
 anchors_preset = 0
+offset_right = 512.0
+offset_bottom = 256.0
 script = ExtResource("1_gcqpf")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
