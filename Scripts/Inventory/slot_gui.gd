@@ -9,10 +9,14 @@ extends Button
 @onready var emptySlot=preload("res://Scenes/HUD/inventory/slot_gui.tscn")
 @onready var inventory: Inventory = preload("res://Scenes/HUD/PlayerInventory.tres")
 var selfSlot:InventorySlot
+var slots: Array[InventorySlot]
 
 
 func update(slot: InventorySlot):
+	#Adds variables we need from other scenes
 	selfSlot=slot
+	
+	#print(slot[index])
 	#if the item is nulls
 	if !slot.item:
 		#replace background sprite to 0
@@ -31,14 +35,10 @@ func remove():
 	selfSlot.amount-=1
 	update(selfSlot)
 	if selfSlot.amount<=0:
-		queue_free()
-		var instance = emptySlot.instantiate()
-		add_sibling(instance)
-		instance.update(inventory.get_parent().get_children()[self.get_index()])
-#coin  = <CompressedTexture2D#-9223372000397884039>
-#consume items function
+		inventory.use_item(selfSlot)
+
 func _on_pressed() -> void:
-	if selfSlot.amount>0:
+	if selfSlot.amount>0 and selfSlot:
 		if itemSprite.texture == ResourceLoader.load("res://Assets/Pickups/GoldCoin.png"):
 			if itemSprite.visible == true:
 				print(main_player.currentHealth)

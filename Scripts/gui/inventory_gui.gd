@@ -13,6 +13,7 @@ func _ready():
 	inventory.updated.connect(update)
 	update()
 
+
 #update all slots in the inventory
 func update():
 	for i in range(min(inventory.slots.size(), slots.size())):
