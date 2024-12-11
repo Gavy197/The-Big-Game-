@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq7csmsee7feu"]
+
+[ext_resource type="FontFile" uid="uid://dwc4bl618qiyw" path="res://Assets/Fonts/pixleFont.ttf" id="1_nondq"]
+[ext_resource type="Script" path="res://Scripts/Enemies/dmg_indicator.gd" id="2_jsa8n"]
+
+[node name="dmgIndicator" type="Label"]
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.513
+anchor_right = 0.504
+anchor_bottom = 0.513
+offset_left = -9.60803
+offset_top = -15.924
+offset_right = 0.391968
+offset_bottom = -0.924011
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_nondq")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_jsa8n")

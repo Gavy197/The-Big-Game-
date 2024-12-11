@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 #Constants
 const SPEED = 200.0
 
@@ -9,7 +9,9 @@ var normalMove:bool =true
 @export var dashDist:int=60
 @export var dashCooldown=2
 @export var effectCount:int=5
-
+#Attacking Variables
+var lightAttackDmg:int =2
+var dmgMultiplier=1
 #Onreadys
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dashCD: Timer = $dashCD
@@ -22,6 +24,11 @@ var normalMove:bool =true
 func _ready() -> void:
 	dashCD.wait_time=dashCooldown
 func _physics_process(delta: float) -> void:
+	#frequently updates dash checker
+	if velocity!=Vector2(0,0):
+		#Sets the size of the dash ray to how far you are dashing
+		dashCast.target_position=Vector2(abs(dashDist*velocity.sign().x),dashDist*velocity.sign().y)
+
 	#Handles movement animations
 	if normalMove==true:
 		# Handles walking left/right.
@@ -80,16 +87,12 @@ func dash():
 		dashDirection.y=1
 	elif(velocity.y<0):
 		dashDirection.y=-1
-	#Sets the size of the dash ray to how far you are dashing
-	dashCast.target_position==Vector2(dashDist*dashDirection.x,dashDist*dashDirection.y)
 	#Makes sure the target area is clear of obstacles
 	if dashCast.is_colliding()==false:
-		#sets the direction of the dash 
 		#Sets a starting position for use in the effect
 		var startingPos=global_position
 		#Sets a target end position for the dash, based on the strengh, and the direction you are moving
 		var dashTarget = global_position+(Vector2(dashDist,dashDist)*dashDirection)
-		print(global_position,dashTarget)
 		#Stops the movement animations from overiding this one
 		normalMove=false
 		velocity=Vector2(0,0)
@@ -128,9 +131,11 @@ func lightAttack():
 	lightAttackColision.disabled=true
 
 
-	
+func takeDamage(amount:int,attacker:CharacterBody2D):
+	health-=amount
+	print("player ",health)
 
 
 func _on_light_attack_area_body_entered(body: Node2D) -> void:
-	print("hit")
-	#Enemy detection/damage code will come later
+	if(body is Enemy):
+		body.takeDamage(lightAttackDmg*dmgMultiplier,self)
