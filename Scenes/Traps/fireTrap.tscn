@@ -1,0 +1,157 @@
+[gd_scene load_steps=19 format=3 uid="uid://cj2dip8vttntl"]
+
+[ext_resource type="Script" path="res://Scripts/Traps/fire_trap.gd" id="1_8ioih"]
+[ext_resource type="Texture2D" uid="uid://c46yyvsd3ljbg" path="res://Assets/Traps/Fire_Trap.png" id="2_cgol8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyvoi"]
+size = Vector2(28, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaugh"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(0, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ommrg"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(32, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx6vj"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(64, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv2d2"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(96, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6reg1"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(128, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhvew"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(160, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbpq7"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(192, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cujiw"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(224, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i18c4"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(256, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s54mf"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(288, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41a8d"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(320, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h44bh"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(352, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44pqy"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(384, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ummv"]
+atlas = ExtResource("2_cgol8")
+region = Rect2(416, 0, 32, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ipwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaugh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ommrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vx6vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv2d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6reg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhvew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbpq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cujiw")
+}],
+"loop": false,
+"name": &"activate",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i18c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s54mf")
+}],
+"loop": true,
+"name": &"active",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41a8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h44bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44pqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ummv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaugh")
+}],
+"loop": false,
+"name": &"deactivate",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaugh")
+}],
+"loop": false,
+"name": &"defult",
+"speed": 5.0
+}]
+
+[node name="fireTrap" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_8ioih")
+damage = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_vyvoi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_1ipwr")
+animation = &"active"
+autoplay = "defult"
+frame_progress = 0.566974
+
+[node name="dmgInterval" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
