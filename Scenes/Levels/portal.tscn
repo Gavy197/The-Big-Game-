@@ -8,6 +8,8 @@ size = Vector2(80, 121)
 
 [node name="Portal" type="Area2D"]
 z_index = 1
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("1_x2glj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

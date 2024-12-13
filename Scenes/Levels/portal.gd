@@ -9,6 +9,8 @@ func _ready():
 	exit_position=global_position+exit_offset
 	pass # Replace with function body.
 func _on_body_entered(body: Node2D) -> void:
+	print("collide")
+
 	if isexit==true:
 		if body.name=="Player":
 			get_tree().change_scene_to_file("res://Scenes/Levels/dungeon.tscn")
