@@ -1,10 +1,8 @@
 extends CharacterBody2D
-
+class_name Player
 #signals
 signal healthChanged
 
-
-class_name Player
 #Constants
 const SPEED = 200.0
 
@@ -144,8 +142,8 @@ func lightAttack():
 
 
 func takeDamage(amount:int,attacker:CharacterBody2D):
-	health-=amount
-	print("player ",health)
+	currentHealth-=amount
+	print("player ",currentHealth)
 
 
 func _on_light_attack_area_body_entered(body: Node2D) -> void:

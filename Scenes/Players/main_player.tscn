@@ -273,7 +273,10 @@ size = Vector2(20, 26)
 z_index = 1
 collision_layer = 4
 script = ExtResource("1_ajyaa")
+currentHealth = null
+maxHealth = null
 inventory = ExtResource("2_clcfm")
+dashDist = null
 dashCooldown = 1
 effectCount = 10
 
