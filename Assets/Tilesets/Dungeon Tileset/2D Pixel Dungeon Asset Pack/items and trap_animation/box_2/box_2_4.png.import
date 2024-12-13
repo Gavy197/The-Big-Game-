@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://trbubnpevhhg"
-path="res://.godot/imported/box_2_4.png-fd54dc1f4d8347fb248e5bec57dad95b.ctex"
+path="res://.godot/imported/box_2_4.png-eac2bd2349d74c607ca0af0b6b24be73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/dungeon tileset/2D Pixel Dungeon Asset Pack/items and trap_animation/box_2/box_2_4.png"
-dest_files=["res://.godot/imported/box_2_4.png-fd54dc1f4d8347fb248e5bec57dad95b.ctex"]
+source_file="res://Assets/Tilesets/Dungeon Tileset/2D Pixel Dungeon Asset Pack/items and trap_animation/box_2/box_2_4.png"
+dest_files=["res://.godot/imported/box_2_4.png-eac2bd2349d74c607ca0af0b6b24be73.ctex"]
 
 [params]
 

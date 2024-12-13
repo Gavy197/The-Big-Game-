@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cop0gfmj7eguf"
-path="res://.godot/imported/door_48x48.png-5dcf4cb137dbb953ecc9a2e83b8ea6c5.ctex"
+path="res://.godot/imported/door_48x48.png-f69b3209bd9d674322242159ff1f5e98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Greenwoods tileset/Serene_Village_revamped_v1.9/SERENE_VILLAGE_REVAMPED/Animated stuff/door_48x48.png"
-dest_files=["res://.godot/imported/door_48x48.png-5dcf4cb137dbb953ecc9a2e83b8ea6c5.ctex"]
+source_file="res://Assets/Tilesets/Greenwoods Tileset/Serene_Village_revamped_v1.9/SERENE_VILLAGE_REVAMPED/Animated stuff/door_48x48.png"
+dest_files=["res://.godot/imported/door_48x48.png-f69b3209bd9d674322242159ff1f5e98.ctex"]
 
 [params]
 

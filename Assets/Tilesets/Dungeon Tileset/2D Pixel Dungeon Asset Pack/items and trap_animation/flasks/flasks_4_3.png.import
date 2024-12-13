@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqwbty6om7jwb"
-path="res://.godot/imported/flasks_4_3.png-e4201a997ac1553f9c8f6caa68957863.ctex"
+path="res://.godot/imported/flasks_4_3.png-18422a9bf428378721b46e760d2823f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/dungeon tileset/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_4_3.png"
-dest_files=["res://.godot/imported/flasks_4_3.png-e4201a997ac1553f9c8f6caa68957863.ctex"]
+source_file="res://Assets/Tilesets/Dungeon Tileset/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_4_3.png"
+dest_files=["res://.godot/imported/flasks_4_3.png-18422a9bf428378721b46e760d2823f1.ctex"]
 
 [params]
 
