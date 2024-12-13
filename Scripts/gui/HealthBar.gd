@@ -9,6 +9,7 @@ func _ready():
 	
 
 func update():
+	get_child(0).text = str(player.currentHealth)
 	value = player.currentHealth * 100 / player.maxHealth
 	
 func _process(delta):

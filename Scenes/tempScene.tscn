@@ -51,6 +51,45 @@ position = Vector2(-62, -55)
 [node name="beaf3" parent="." instance=ExtResource("4_temte")]
 position = Vector2(43, -117)
 
+[node name="beaf4" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf5" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf6" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf7" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf8" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf9" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf10" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf11" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf12" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf13" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf14" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf15" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
+[node name="beaf16" parent="." instance=ExtResource("4_temte")]
+position = Vector2(43, -117)
+
 [node name="fish" parent="." instance=ExtResource("8_xsx5f")]
 position = Vector2(-121, -159)
 itemRes = ExtResource("9_4hd3j")

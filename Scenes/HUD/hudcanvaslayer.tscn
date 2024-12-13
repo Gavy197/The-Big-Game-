@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6mrf76fn7r2o"]
+[gd_scene load_steps=9 format=3 uid="uid://c6mrf76fn7r2o"]
 
 [ext_resource type="Script" path="res://Scripts/gui/HealthBar.gd" id="1_ovs8a"]
 [ext_resource type="Script" path="res://Scripts/gui/canvas_layer.gd" id="1_uhhow"]
@@ -7,8 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://do4ibyxu1e7gf" path="res://Scenes/HUD/inventory/inventory_gui.tscn" id="4_s00ix"]
 [ext_resource type="FontFile" uid="uid://8p8a86wkjymu" path="res://Assets/Fonts/DMSerifText-Regular.ttf" id="6_36vxv"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_cojnf"]
+font = ExtResource("6_36vxv")
+
 [sub_resource type="LabelSettings" id="LabelSettings_wo4j1"]
 font = ExtResource("6_36vxv")
+font_size = 32
 
 [node name="Hudcanvaslayer" type="CanvasLayer"]
 process_mode = 3
@@ -22,6 +26,19 @@ scale = Vector2(3.5, 3.5)
 texture_under = ExtResource("3_itwwr")
 texture_progress = ExtResource("4_dmyu4")
 script = ExtResource("1_ovs8a")
+
+[node name="HP int" type="Label" parent="TextureProgressBar"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 222.0
+offset_bottom = 28.0
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/font_size = 16
+text = "100
+"
+label_settings = SubResource("LabelSettings_cojnf")
+horizontal_alignment = 1
 
 [node name="InventoryGui" parent="." instance=ExtResource("4_s00ix")]
 custom_minimum_size = Vector2(138, 90)
@@ -38,13 +55,12 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 840.0
-offset_top = 15.0
-offset_right = 936.0
-offset_bottom = 38.0
-scale = Vector2(3, 3)
+[node name="Paused text" type="Label" parent="."]
+offset_left = 851.0
+offset_top = 4.0
+offset_right = 1040.0
+offset_bottom = 49.0
+scale = Vector2(1.5, 1.5)
 text = "Game paused"
 label_settings = SubResource("LabelSettings_wo4j1")
 
