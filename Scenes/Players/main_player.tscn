@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://byajguxicw3v" path="res://Assets/Player/Kinght color silver/_Idle.png" id="1_oog4x"]
 [ext_resource type="Texture2D" uid="uid://dfkvlj2hbu0b5" path="res://Assets/Player/Kinght color silver/_Run.png" id="2_6dxsa"]
 [ext_resource type="Texture2D" uid="uid://csnmuemdo7bc4" path="res://Assets/Player/Kinght color silver/_Dash.png" id="2_80q5y"]
-[ext_resource type="Resource" uid="uid://ddd1x14o0rkmj" path="res://Scenes/HUD/PlayerInventory.tres" id="2_clcfm"]
+[ext_resource type="Resource" uid="uid://bws7uo35puy3c" path="res://Scenes/HUD/PlayerInventory.tres" id="2_clcfm"]
 [ext_resource type="Texture2D" uid="uid://dvwrd2o4bwvx1" path="res://Assets/Player/Kinght color silver/_Attack.png" id="5_t4k53"]
 [ext_resource type="Texture2D" uid="uid://sjlpxwvw411" path="res://Assets/Player/Kinght color silver/_Attack2.png" id="6_rc6cw"]
 
@@ -314,9 +314,10 @@ shape = SubResource("RectangleShape2D_ccvrk")
 disabled = true
 
 [node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-position = Vector2(-1, -13)
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_7g1xw")
 
 [connection signal="body_entered" from="lightAttackArea" to="." method="_on_light_attack_area_body_entered"]
