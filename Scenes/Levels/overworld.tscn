@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://dsu2xybbi7kx3"]
+[gd_scene load_steps=30 format=4 uid="uid://dsu2xybbi7kx3"]
 
 [ext_resource type="PackedScene" uid="uid://c6mrf76fn7r2o" path="res://Scenes/HUD/hudcanvaslayer.tscn" id="1_8fg84"]
 [ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods tileset/Trees.png" id="1_pggjn"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dw5jlrp6pyuh0" path="res://Scenes/Pickups/coin.tscn" id="9_xr7yu"]
 [ext_resource type="PackedScene" uid="uid://clqnhy71jj6w8" path="res://Scenes/Pickups/medipack.tscn" id="10_rgp7k"]
 [ext_resource type="PackedScene" uid="uid://cg2p4jj37iiyv" path="res://Scenes/Pickups/fish.tscn" id="11_1ek1s"]
+[ext_resource type="Resource" uid="uid://4kx0vxan4yow" path="res://Scenes/HUD/inventory/Fish.tres" id="13_od04d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uoxtc"]
 texture = ExtResource("1_pggjn")
@@ -5672,3 +5673,4 @@ position = Vector2(-389, -164)
 
 [node name="fish" parent="." instance=ExtResource("11_1ek1s")]
 position = Vector2(-601, -326)
+itemRes = ExtResource("13_od04d")
