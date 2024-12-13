@@ -140,9 +140,16 @@ func lightAttack():
 func slashAttack():
 	#Creates an instance of the slash scene
 	var instance=slash.instantiate()
-	add_sibling(instance)
 	instance.global_position=global_position
 	instance.damage= slashAttackDmg
+	if scale.x<0:
+		instance.targetAngle=get_angle_to(get_global_mouse_position())-PI
+		print("negitive")
+	elif scale.x>0:
+		instance.targetAngle=get_angle_to(get_global_mouse_position())
+
+	instance.rotate(instance.targetAngle)
+	add_sibling(instance)
 
 
 func takeDamage(amount:int,attacker:CharacterBody2D):

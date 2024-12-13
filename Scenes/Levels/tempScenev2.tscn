@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=4 uid="uid://d1qgueif6ffp6"]
+[gd_scene load_steps=16 format=4 uid="uid://b2rt1fxtmv766"]
 
-[ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods tileset/Trees.png" id="1_km4ix"]
-[ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods tileset/First Asset pack.png" id="2_hs8m4"]
-[ext_resource type="Texture2D" uid="uid://bkquthxswt31s" path="res://Assets/Tilesets/Greenwoods tileset/Props.png" id="3_p7s5l"]
+[ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods Tileset/Trees.png" id="1_km4ix"]
+[ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods Tileset/First Asset pack.png" id="2_hs8m4"]
+[ext_resource type="Texture2D" uid="uid://bkquthxswt31s" path="res://Assets/Tilesets/Greenwoods Tileset/Props.png" id="3_p7s5l"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="4_mlevm"]
 [ext_resource type="PackedScene" uid="uid://dpbywo28tfxty" path="res://Scenes/Enemies/golem.tscn" id="5_8mibh"]
 [ext_resource type="PackedScene" uid="uid://cqc1fhfblf7qh" path="res://Scenes/Enemies/goblin.tscn" id="6_84mtq"]
@@ -2532,11 +2532,3 @@ enemyBehavior = 0
 
 [node name="Goblin" parent="." instance=ExtResource("6_84mtq")]
 position = Vector2(-624, 243)
-
-[node name="Label" type="Label" parent="."]
-offset_right = 320.0
-offset_bottom = 137.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 100
-text = "Potato"

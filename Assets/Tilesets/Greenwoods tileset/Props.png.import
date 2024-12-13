@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkquthxswt31s"
-path="res://.godot/imported/Props.png-6e2255f18b74eea9f4509e994e9e6c78.ctex"
+path="res://.godot/imported/Props.png-735c1ec4a2669db7c6ef09b2669ea797.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Greenwoods tileset/Props.png"
-dest_files=["res://.godot/imported/Props.png-6e2255f18b74eea9f4509e994e9e6c78.ctex"]
+source_file="res://Assets/Tilesets/Greenwoods Tileset/Props.png"
+dest_files=["res://.godot/imported/Props.png-735c1ec4a2669db7c6ef09b2669ea797.ctex"]
 
 [params]
 
