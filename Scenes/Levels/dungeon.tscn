@@ -1,10 +1,10 @@
 [gd_scene load_steps=24 format=4 uid="uid://b1kfpcyompwsj"]
 
-[ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods Tileset/Trees.png" id="1_vct5d"]
-[ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods Tileset/First Asset pack.png" id="2_qhrly"]
-[ext_resource type="Texture2D" uid="uid://bkquthxswt31s" path="res://Assets/Tilesets/Greenwoods Tileset/Props.png" id="3_dyy8g"]
-[ext_resource type="Texture2D" uid="uid://ciixtfl1ol2e7" path="res://Assets/Tilesets/Dungeon Tileset/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="4_6ojf7"]
-[ext_resource type="Texture2D" uid="uid://ltmw0m4psiys" path="res://Assets/Tilesets/Dungeon Tileset/Tiles.png" id="5_h5t7m"]
+[ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods tileset/Trees.png" id="1_vct5d"]
+[ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods tileset/First Asset pack.png" id="2_qhrly"]
+[ext_resource type="Texture2D" uid="uid://bkquthxswt31s" path="res://Assets/Tilesets/Greenwoods tileset/Props.png" id="3_dyy8g"]
+[ext_resource type="Texture2D" uid="uid://ciixtfl1ol2e7" path="res://Assets/Tilesets/dungeon tileset/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="4_6ojf7"]
+[ext_resource type="Texture2D" uid="uid://ltmw0m4psiys" path="res://Assets/Tilesets/dungeon tileset/Tiles.png" id="5_h5t7m"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="6_6vswy"]
 [ext_resource type="Texture2D" uid="uid://cyck2r7vc7pkj" path="res://mazeTemplate.png" id="7_trioc"]
 [ext_resource type="PackedScene" uid="uid://bxnxubkndfrcb" path="res://Scenes/Levels/portal.tscn" id="8_25v8w"]
@@ -4684,7 +4684,7 @@ tile_set = SubResource("TileSet_uuhwn")
 
 [node name="Player" parent="." instance=ExtResource("6_6vswy")]
 z_index = 2
-position = Vector2(1062, 106)
+position = Vector2(-853, -793)
 
 [node name="MazeTemplate" type="Sprite2D" parent="."]
 visible = false
