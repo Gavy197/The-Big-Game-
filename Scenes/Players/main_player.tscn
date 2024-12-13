@@ -273,7 +273,7 @@ dashCooldown = 1
 effectCount = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 19)
+zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
