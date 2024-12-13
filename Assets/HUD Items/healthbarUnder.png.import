@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Assets/HUD Items/healthbarUnder.png.import
-uid="uid://dhqg7jthb51xq"
+uid="uid://bppm4dv3ef4ls"
 path="res://.godot/imported/healthbarUnder.png-c7101321e08976a68d0baa6819f1a3da.ctex"
-========
-uid="uid://dw6e4og53ummk"
-path="res://.godot/imported/Nether_Portal.webp-9e3f0045860cc5a7081857b533321236.ctex"
->>>>>>>> main:Nether_Portal.webp.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Assets/HUD Items/healthbarUnder.png.import
 source_file="res://Assets/HUD Items/healthbarUnder.png"
 dest_files=["res://.godot/imported/healthbarUnder.png-c7101321e08976a68d0baa6819f1a3da.ctex"]
-========
-source_file="res://Nether_Portal.webp"
-dest_files=["res://.godot/imported/Nether_Portal.webp-9e3f0045860cc5a7081857b533321236.ctex"]
->>>>>>>> main:Nether_Portal.webp.import
 
 [params]
 

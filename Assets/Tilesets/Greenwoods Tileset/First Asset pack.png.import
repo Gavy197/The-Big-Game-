@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8xixbybjh0u7"
-path="res://.godot/imported/First Asset pack.png-de46fa6a2fdbe383cdc7a509d0d7a342.ctex"
+path="res://.godot/imported/First Asset pack.png-fc1ec5d35421af252e204973a9974841.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Greenwoods Tileset/First Asset pack.png"
-dest_files=["res://.godot/imported/First Asset pack.png-de46fa6a2fdbe383cdc7a509d0d7a342.ctex"]
+source_file="res://Assets/Tilesets/Greenwoods tileset/First Asset pack.png"
+dest_files=["res://.godot/imported/First Asset pack.png-fc1ec5d35421af252e204973a9974841.ctex"]
 
 [params]
 

@@ -8,6 +8,7 @@
 size = Vector2(7, 6)
 
 [node name="coin" type="Area2D"]
+z_index = 1
 script = ExtResource("1_2s37u")
 itemRes = ExtResource("2_of0u8")
 

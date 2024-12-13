@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Assets/HUD Items/healthbarProgress.png.import
-uid="uid://c7rfs4xynhrg0"
+uid="uid://cjxovcgcakovx"
 path="res://.godot/imported/healthbarProgress.png-b3bf040090febee9413ec023b27b0ef6.ctex"
-========
-uid="uid://cyck2r7vc7pkj"
-path="res://.godot/imported/mazeTemplate.png-32971ce536a02ed94d163e9ec892d881.ctex"
->>>>>>>> main:mazeTemplate.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Assets/HUD Items/healthbarProgress.png.import
 source_file="res://Assets/HUD Items/healthbarProgress.png"
 dest_files=["res://.godot/imported/healthbarProgress.png-b3bf040090febee9413ec023b27b0ef6.ctex"]
-========
-source_file="res://mazeTemplate.png"
-dest_files=["res://.godot/imported/mazeTemplate.png-32971ce536a02ed94d163e9ec892d881.ctex"]
->>>>>>>> main:mazeTemplate.png.import
 
 [params]
 

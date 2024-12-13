@@ -8,6 +8,7 @@
 size = Vector2(7, 6)
 
 [node name="medipack" type="Area2D"]
+z_index = 1
 script = ExtResource("1_cklqe")
 itemRes = ExtResource("2_0nieg")
 

@@ -1,11 +1,17 @@
-[gd_scene load_steps=23 format=4 uid="uid://djk64gg2fdr5l"]
+[gd_scene load_steps=29 format=4 uid="uid://dsu2xybbi7kx3"]
 
-[ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods Tileset/Trees.png" id="1_pggjn"]
-[ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods Tileset/First Asset pack.png" id="2_c2qmd"]
+[ext_resource type="PackedScene" uid="uid://c6mrf76fn7r2o" path="res://Scenes/HUD/hudcanvaslayer.tscn" id="1_8fg84"]
+[ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods tileset/Trees.png" id="1_pggjn"]
+[ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods tileset/First Asset pack.png" id="2_c2qmd"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="3_1dbew"]
-[ext_resource type="Texture2D" uid="uid://bkquthxswt31s" path="res://Assets/Tilesets/Greenwoods Tileset/Props.png" id="3_i7nit"]
-[ext_resource type="Texture2D" uid="uid://wb2flnee2lbw" path="res://Assets/Tilesets/Greenwoods Tileset/Serene_Village_revamped_v1.9/SERENE_VILLAGE_REVAMPED/Serene_Village_32x32.png" id="4_b6jcg"]
-[ext_resource type="PackedScene" uid="uid://bxnxubkndfrcb" path="res://Scenes/Levels/portal.tscn" id="6_bfqxi"]
+[ext_resource type="Texture2D" uid="uid://bkquthxswt31s" path="res://Assets/Tilesets/Greenwoods tileset/Props.png" id="3_i7nit"]
+[ext_resource type="Texture2D" uid="uid://wb2flnee2lbw" path="res://Assets/Tilesets/Greenwoods tileset/Serene_Village_revamped_v1.9/SERENE_VILLAGE_REVAMPED/Serene_Village_32x32.png" id="4_b6jcg"]
+[ext_resource type="PackedScene" path="res://Scenes/Levels/portal.tscn" id="6_bfqxi"]
+[ext_resource type="PackedScene" uid="uid://dsxuyvwn1ehdy" path="res://Scenes/Pickups/beaf.tscn" id="7_ira35"]
+[ext_resource type="PackedScene" uid="uid://kqq4oqmw834m" path="res://Scenes/Pickups/calamari.tscn" id="8_60d24"]
+[ext_resource type="PackedScene" uid="uid://dw5jlrp6pyuh0" path="res://Scenes/Pickups/coin.tscn" id="9_xr7yu"]
+[ext_resource type="PackedScene" uid="uid://clqnhy71jj6w8" path="res://Scenes/Pickups/medipack.tscn" id="10_rgp7k"]
+[ext_resource type="PackedScene" uid="uid://cg2p4jj37iiyv" path="res://Scenes/Pickups/fish.tscn" id="11_1ek1s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uoxtc"]
 texture = ExtResource("1_pggjn")
@@ -5605,6 +5611,8 @@ sources/0 = SubResource("TileSetAtlasSource_802ve")
 
 [node name="Overworld" type="Node2D"]
 
+[node name="Hudcanvaslayer" parent="." instance=ExtResource("1_8fg84")]
+
 [node name="Props" type="TileMapLayer" parent="."]
 z_index = 3
 position = Vector2(0, 1)
@@ -5646,3 +5654,18 @@ position = Vector2(-110, 17)
 
 [node name="Portal" parent="." instance=ExtResource("6_bfqxi")]
 position = Vector2(-2290, 197)
+
+[node name="beaf" parent="." instance=ExtResource("7_ira35")]
+position = Vector2(-680, -98)
+
+[node name="calamari" parent="." instance=ExtResource("8_60d24")]
+position = Vector2(-639, -51)
+
+[node name="coin" parent="." instance=ExtResource("9_xr7yu")]
+position = Vector2(-899, -103)
+
+[node name="medipack" parent="." instance=ExtResource("10_rgp7k")]
+position = Vector2(-389, -164)
+
+[node name="fish" parent="." instance=ExtResource("11_1ek1s")]
+position = Vector2(-601, -326)
