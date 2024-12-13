@@ -7,6 +7,7 @@ var adjacentSpikes:Array=[]
 func activate():
 	#Prevents the trap from being activated multiple times
 	if active==false:
+		visible=true
 		active=true
 		#Plays the startup animation
 		animated_sprite_2d.play("activate")

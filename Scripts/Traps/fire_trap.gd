@@ -6,6 +6,7 @@ func activate():
 	#Prevents the trap from being activated multiple times
 	if active==false:
 		active=true
+		visible=true
 		#Plays the startup animation
 		animated_sprite_2d.play("activate")
 		await(animated_sprite_2d.animation_finished)
