@@ -7,6 +7,8 @@ var adjacentSpikes:Array=[]
 func activate():
 	#Prevents the trap from being activated multiple times
 	if active==false:
+		#Sets up the variabels
+		stepCount=stepThreshhold
 		visible=true
 		active=true
 		#Plays the startup animation

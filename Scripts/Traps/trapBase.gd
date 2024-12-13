@@ -3,7 +3,7 @@ extends Area2D
 class_name Trap
 #Exports
 @export var damage=0
-@export var stepThreshhold=0
+@export var stepThreshhold=2
 #Onreadys
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 #Variables
@@ -11,7 +11,9 @@ var active:bool=false
 var target:Player
 var stepCount:int=0
 func _ready() -> void:
-	visible=false
+	#Makes traps visible if the trheshcount
+	if stepThreshhold>=0:
+		visible=false
 
 #Abstract Activate Function
 func activate():
@@ -22,7 +24,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		#Increases the step Count
 		stepCount+=1
-		if stepCount>stepThreshhold:
+		if stepCount>=stepThreshhold:
 			#Activates the trap 
 			activate()
 		#Sets the conflict
