@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://clqnhy71jj6w8"]
+
+[ext_resource type="Script" path="res://Scripts/gui/collectable.gd" id="1_cklqe"]
+[ext_resource type="Resource" uid="uid://cudhgrr6u4258" path="res://Scenes/HUD/inventory/MediPack.tres" id="2_0nieg"]
+[ext_resource type="Texture2D" uid="uid://bchkrnpyx3xfx" path="res://Assets/Pickups/Medipack.png" id="2_hm4q4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddvef"]
+size = Vector2(7, 6)
+
+[node name="medipack" type="Area2D"]
+z_index = 1
+script = ExtResource("1_cklqe")
+itemRes = ExtResource("2_0nieg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ddvef")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_hm4q4")

@@ -1,10 +1,20 @@
 extends CharacterBody2D
 class_name Player
+#signals
+signal healthChanged
+
 #Constants
 const SPEED = 200.0
 
 #Varibales
-@export var health: int = 100
+@export var currentHealth: int = 90
+#Varibales
+#@export var inventory: Inventory
+@export var maxHealth: int = 100
+@export var inventory: Inventory
+
+
+
 var normalMove:bool =true
 @export var dashDist:int=60
 @export var dashCooldown=2
@@ -132,10 +142,18 @@ func lightAttack():
 
 
 func takeDamage(amount:int,attacker:CharacterBody2D):
-	health-=amount
-	print("player ",health)
+	currentHealth-=amount
+	print("player ",currentHealth)
 
 
 func _on_light_attack_area_body_entered(body: Node2D) -> void:
 	if(body is Enemy):
 		body.takeDamage(lightAttackDmg*dmgMultiplier,self)
+
+
+
+
+func _on_pickup_area_area_entered(area: Area2D) -> void:
+	if area.has_method("collect"):
+		area.collect(inventory)
+	 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyck2r7vc7pkj"
-path="res://.godot/imported/mazeTemplate.png-32971ce536a02ed94d163e9ec892d881.ctex"
+uid="uid://b86bki1d7lksh"
+path="res://.godot/imported/Fish.png-ff5300cc8453961abf1056c661be1431.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mazeTemplate.png"
-dest_files=["res://.godot/imported/mazeTemplate.png-32971ce536a02ed94d163e9ec892d881.ctex"]
+source_file="res://Assets/Pickups/Fish.png"
+dest_files=["res://.godot/imported/Fish.png-ff5300cc8453961abf1056c661be1431.ctex"]
 
 [params]
 
