@@ -5651,6 +5651,9 @@ tile_set = SubResource("TileSet_w7bs0")
 [node name="Player" parent="." instance=ExtResource("3_1dbew")]
 z_index = 2
 position = Vector2(-110, 17)
+currentHealth = 90
+maxHealth = 100
+dashDist = 60
 
 [node name="Portal" parent="." instance=ExtResource("6_bfqxi")]
 position = Vector2(-2290, 197)
