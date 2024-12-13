@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://br04pca6ijcd3"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/golem_projectile.gd" id="1_ua0hd"]
+[ext_resource type="Texture2D" uid="uid://dbu8gphqcu8j5" path="res://Assets/Enemies/Golem/Armored/Golem_Armor_AttackC_Projectile.png" id="2_d3l72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp1nd"]
+size = Vector2(20, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfh12"]
+atlas = ExtResource("2_d3l72")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jp7e"]
+atlas = ExtResource("2_d3l72")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2lln"]
+atlas = ExtResource("2_d3l72")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w8lmr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfh12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jp7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2lln")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="GolemProjectile" type="StaticBody2D"]
+z_index = 3
+scale = Vector2(2, 2)
+collision_mask = 4
+constant_linear_velocity = Vector2(10, 0)
+script = ExtResource("1_ua0hd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wp1nd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(8.27849e-06, 0.699856, 0.879964, 1)
+position = Vector2(0, 1.5)
+sprite_frames = SubResource("SpriteFrames_w8lmr")
+autoplay = "default"
+frame_progress = 0.314665

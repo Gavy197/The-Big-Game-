@@ -4,6 +4,7 @@ extends CharacterBody2D
 signal healthChanged
 
 
+class_name Player
 #Constants
 const SPEED = 200.0
 
@@ -20,12 +21,14 @@ var normalMove:bool =true
 @export var dashDist:int=60
 @export var dashCooldown=2
 @export var effectCount:int=5
-
+#Attacking Variables
+var lightAttackDmg:int =2
+var dmgMultiplier=1
 #Onreadys
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dashCD: Timer = $dashCD
 @onready var dashCast:RayCast2D=$dashCast
-@onready var lightAttackArea: CollisionShape2D = $lightAttackArea/CollisionShape2D
+@onready var lightAttackColision: CollisionShape2D = $lightAttackArea/CollisionShape2D
 
 #Preloads
 @onready var dashEffect=preload("res://Scenes/Players/dash_effect.tscn")
@@ -33,6 +36,11 @@ var normalMove:bool =true
 func _ready() -> void:
 	dashCD.wait_time=dashCooldown
 func _physics_process(delta: float) -> void:
+	#frequently updates dash checker
+	if velocity!=Vector2(0,0):
+		#Sets the size of the dash ray to how far you are dashing
+		dashCast.target_position=Vector2(abs(dashDist*velocity.sign().x),dashDist*velocity.sign().y)
+
 	#Handles movement animations
 	if normalMove==true:
 		# Handles walking left/right.
@@ -60,9 +68,11 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("Idle")
 		#Flips spirte when going left
 		if hDirection<0:
-			animated_sprite_2d.flip_h=true
+			#animated_sprite_2d.flip_h=true
+			scale.x=-scale.y
 		elif hDirection>0:
-			animated_sprite_2d.flip_h=false
+			#animated_sprite_2d.flip_h=false
+			scale.x=scale.y
 	move_and_slide()
 
 #Detects inputs for all other actions (dashing, attacking,ect)
@@ -89,16 +99,12 @@ func dash():
 		dashDirection.y=1
 	elif(velocity.y<0):
 		dashDirection.y=-1
-	#Sets the size of the dash ray to how far you are dashing
-	dashCast.target_position==Vector2(dashDist*dashDirection.x,dashDist*dashDirection.y)
 	#Makes sure the target area is clear of obstacles
 	if dashCast.is_colliding()==false:
-		#sets the direction of the dash 
 		#Sets a starting position for use in the effect
 		var startingPos=global_position
 		#Sets a target end position for the dash, based on the strengh, and the direction you are moving
 		var dashTarget = global_position+(Vector2(dashDist,dashDist)*dashDirection)
-		print(global_position,dashTarget)
 		#Stops the movement animations from overiding this one
 		normalMove=false
 		velocity=Vector2(0,0)
@@ -113,7 +119,10 @@ func dash():
 			#Handles y
 			instance.global_position.y=startingPos.y+((dashDist/effectCount)*(i)*dashDirection.y)
 			#Flips the sprite of the effect, if needed
-			instance.flip_h=animated_sprite_2d.flip_h
+			if dashDirection.x<0:
+				instance.flip_h=true
+			else:
+				instance.flip_h=false
 			#Changes the color of the dash
 			instance.modulate.r+=i
 		#Restarts the cooldown
@@ -125,20 +134,24 @@ func lightAttack():
 	velocity=Vector2(0,0)
 	animated_sprite_2d.play("lightAttack")
 	#lightAttackArea.monitoring==true
-	lightAttackArea.disabled==true
+	lightAttackColision.disabled=false
 	#Waits for the animation to finish before allowin for player movement again
 	await(animated_sprite_2d.animation_finished)
 	normalMove=true
 	#Disables attack Area
 	#lightAttackArea.monitoring==false
-	lightAttackArea.disabled==false
+	lightAttackColision.disabled=true
 
-	
+
+func takeDamage(amount:int,attacker:CharacterBody2D):
+	health-=amount
+	print("player ",health)
 
 
 func _on_light_attack_area_body_entered(body: Node2D) -> void:
-	print("hit")
-	#Enemy detection/damage code will come later
+	if(body is Enemy):
+		body.takeDamage(lightAttackDmg*dmgMultiplier,self)
+
 
 
 
