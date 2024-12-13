@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://72nyw3eyiwp3"]
+
+[ext_resource type="PackedScene" uid="uid://cj2dip8vttntl" path="res://Scenes/Traps/fireTrap.tscn" id="1_emwvx"]
+
+[node name="visibleFire" type="Node2D"]
+
+[node name="fireTrap" parent="." instance=ExtResource("1_emwvx")]
+stepThreshhold = -1

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl05h8b5ah8ta"]
+
+[ext_resource type="PackedScene" uid="uid://u2n4il36e7wb" path="res://Scenes/Traps/spikeTrap.tscn" id="1_bucns"]
+
+[node name="hiddenSpike" type="Node2D"]
+
+[node name="spikeTrap" parent="." instance=ExtResource("1_bucns")]
+stepThreshhold = 0
