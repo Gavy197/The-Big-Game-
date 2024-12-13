@@ -10,16 +10,20 @@ var normalMove:bool =true
 @export var dashCooldown=2
 @export var effectCount:int=5
 #Attacking Variables
-var lightAttackDmg:int =2
+var lightAttackDmg:int =3
+var slashAttackDmg:int =1
 var dmgMultiplier=1
 #Onreadys
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dashCD: Timer = $dashCD
 @onready var dashCast:RayCast2D=$dashCast
 @onready var lightAttackColision: CollisionShape2D = $lightAttackArea/CollisionShape2D
+@onready var slashCD: Timer = $slashCD
+
 
 #Preloads
 @onready var dashEffect=preload("res://Scenes/Players/dash_effect.tscn")
+@onready var slash=preload("res://Scenes/Players/slash.tscn")
 
 func _ready() -> void:
 	dashCD.wait_time=dashCooldown
@@ -74,6 +78,8 @@ func _input(event: InputEvent) -> void:
 				dash()
 	if Input.is_action_just_pressed("lightAttack"):
 		lightAttack()
+	if Input.is_action_just_pressed("slashAttack"):
+		slashAttack()
 			
 func dash():
 	#Makes the dash direction start as 0,0
@@ -116,6 +122,7 @@ func dash():
 		#Restarts the cooldown
 		dashCD.start()
 		normalMove =true
+		
 func lightAttack():
 	#Disables/stops movement
 	normalMove=false
@@ -129,6 +136,13 @@ func lightAttack():
 	#Disables attack Area
 	#lightAttackArea.monitoring==false
 	lightAttackColision.disabled=true
+
+func slashAttack():
+	#Creates an instance of the slash scene
+	var instance=slash.instantiate()
+	add_sibling(instance)
+	instance.global_position=global_position
+	instance.damage= slashAttackDmg
 
 
 func takeDamage(amount:int,attacker:CharacterBody2D):

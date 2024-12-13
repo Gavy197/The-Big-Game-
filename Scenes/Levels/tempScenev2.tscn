@@ -2527,8 +2527,16 @@ tile_set = SubResource("TileSet_w7bs0")
 position = Vector2(-23, 180)
 
 [node name="Golem" parent="." instance=ExtResource("5_8mibh")]
-position = Vector2(-566, 147)
+position = Vector2(-910, 7)
 enemyBehavior = 0
 
 [node name="Goblin" parent="." instance=ExtResource("6_84mtq")]
-position = Vector2(-362, 164)
+position = Vector2(-624, 243)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 320.0
+offset_bottom = 137.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Potato"
