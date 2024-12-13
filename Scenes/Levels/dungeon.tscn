@@ -4697,3 +4697,4 @@ texture = ExtResource("7_trioc")
 [node name="Portal" parent="." instance=ExtResource("8_25v8w")]
 position = Vector2(1248, 111)
 target = ExtResource("9_4s4qr")
+isexit = false
