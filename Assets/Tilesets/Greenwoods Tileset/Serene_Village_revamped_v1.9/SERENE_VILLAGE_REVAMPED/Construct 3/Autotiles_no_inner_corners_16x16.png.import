@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfnu4vitmoc4m"
-path="res://.godot/imported/Autotiles_no_inner_corners_16x16.png-3b9719a8bd2a7d116b2b0cd87afd05e0.ctex"
+path="res://.godot/imported/Autotiles_no_inner_corners_16x16.png-d0454add1daf9a008266fd09cfff642e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Greenwoods tileset/Serene_Village_revamped_v1.9/SERENE_VILLAGE_REVAMPED/Construct 3/Autotiles_no_inner_corners_16x16.png"
-dest_files=["res://.godot/imported/Autotiles_no_inner_corners_16x16.png-3b9719a8bd2a7d116b2b0cd87afd05e0.ctex"]
+source_file="res://Assets/Tilesets/Greenwoods Tileset/Serene_Village_revamped_v1.9/SERENE_VILLAGE_REVAMPED/Construct 3/Autotiles_no_inner_corners_16x16.png"
+dest_files=["res://.godot/imported/Autotiles_no_inner_corners_16x16.png-d0454add1daf9a008266fd09cfff642e.ctex"]
 
 [params]
 

@@ -2510,7 +2510,7 @@ tile_size = Vector2i(12, 12)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_802ve")
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jxx1q"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_tmma5"]
 scenes/1/scene = ExtResource("4_kc76j")
 scenes/2/scene = ExtResource("7_eyy50")
 scenes/3/scene = ExtResource("6_alkdt")
@@ -2520,7 +2520,7 @@ scenes/6/scene = ExtResource("9_vb774")
 
 [sub_resource type="TileSet" id="TileSet_gspju"]
 tile_size = Vector2i(30, 28)
-sources/1 = SubResource("TileSetScenesCollectionSource_jxx1q")
+sources/1 = SubResource("TileSetScenesCollectionSource_tmma5")
 
 [node name="Overworld" type="Node2D"]
 
@@ -2540,7 +2540,11 @@ tile_map_data = PackedByteArray("AADz/9v/AAAWAA8AAADz/9z/AAAWAA0AAADz/93/AAAWAA0
 tile_set = SubResource("TileSet_w7bs0")
 
 [node name="Traps" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADt/wAAAQAAAAAABQDt/wEAAQAAAAAABQDt/wIAAQAAAAAABQDt/wMAAQAAAAAABQDu/wAAAQAAAAAABQDu/wEAAQAAAAAABQDu/wIAAQAAAAAABQDu/wMAAQAAAAAABQDv/wAAAQAAAAAABQDv/wEAAQAAAAAABQDv/wIAAQAAAAAABQDv/wMAAQAAAAAABQDw/wAAAQAAAAAABQDw/wEAAQAAAAAABQDw/wIAAQAAAAAABQDw/wMAAQAAAAAABQDx/wAAAQAAAAAABQDx/wEAAQAAAAAABQDx/wIAAQAAAAAABQDx/wMAAQAAAAAABQDy/wAAAQAAAAAABQDy/wEAAQAAAAAABQDy/wIAAQAAAAAABQDy/wMAAQAAAAAABQDz/wAAAQAAAAAABQDz/wEAAQAAAAAABQDz/wIAAQAAAAAABQDz/wMAAQAAAAAABQD0/wAAAQAAAAAABQD0/wEAAQAAAAAABQD0/wIAAQAAAAAABQD0/wMAAQAAAAAABQD1/wAAAQAAAAAABQD1/wEAAQAAAAAABQD1/wIAAQAAAAAABQD1/wMAAQAAAAAABQD2/wAAAQAAAAAABQD2/wEAAQAAAAAABQD2/wIAAQAAAAAABQD2/wMAAQAAAAAABQA=")
 tile_set = SubResource("TileSet_gspju")
 
 [node name="Player" parent="." instance=ExtResource("4_mlevm")]
 position = Vector2(-465, -129)
+currentHealth = 90
+maxHealth = 100
+dashDist = 60
