@@ -239,7 +239,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"heavyAttack",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -271,6 +271,7 @@ collision_layer = 4
 script = ExtResource("1_ajyaa")
 dashCooldown = 1
 effectCount = 10
+slashAttackDmg = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 19)
@@ -279,7 +280,7 @@ position_smoothing_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_0d5q4")
-animation = &"Idle"
+animation = &"heavyAttack"
 autoplay = "Idle"
 offset = Vector2(4, 0)
 
@@ -306,5 +307,7 @@ shape = SubResource("RectangleShape2D_ccvrk")
 disabled = true
 
 [node name="slashCD" type="Timer" parent="."]
+wait_time = 1.8
+one_shot = true
 
 [connection signal="body_entered" from="lightAttackArea" to="." method="_on_light_attack_area_body_entered"]
