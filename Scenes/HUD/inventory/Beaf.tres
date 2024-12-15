@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://84j32ai4ydnt"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://b25yxbg7edqg1"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/inventoryItem.gd" id="1_lril8"]
 [ext_resource type="Texture2D" uid="uid://c3vbofrdxrixy" path="res://Assets/Pickups/Beaf.png" id="2_net2t"]

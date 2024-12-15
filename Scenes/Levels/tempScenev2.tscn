@@ -1,21 +1,17 @@
-[gd_scene load_steps=22 format=4 uid="uid://d1qgueif6ffp6"]
+[gd_scene load_steps=24 format=4 uid="uid://d1qgueif6ffp6"]
 
-[ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods Tileset/Trees.png" id="1_km4ix"]
-[ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods Tileset/First Asset pack.png" id="2_hs8m4"]
-[ext_resource type="Texture2D" uid="uid://bkquthxswt31s" path="res://Assets/Tilesets/Greenwoods Tileset/Props.png" id="3_p7s5l"]
+[ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods tileset/Trees.png" id="1_km4ix"]
+[ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods tileset/First Asset pack.png" id="2_hs8m4"]
+[ext_resource type="Texture2D" uid="uid://bkquthxswt31s" path="res://Assets/Tilesets/Greenwoods tileset/Props.png" id="3_p7s5l"]
 [ext_resource type="PackedScene" uid="uid://dmljr6nwigy1f" path="res://Scenes/Traps/hidden_fire.tscn" id="4_kc76j"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="4_mlevm"]
+[ext_resource type="PackedScene" uid="uid://dpbywo28tfxty" path="res://Scenes/Enemies/golem.tscn" id="5_8mibh"]
+[ext_resource type="PackedScene" uid="uid://cqc1fhfblf7qh" path="res://Scenes/Enemies/goblin.tscn" id="6_84mtq"]
 [ext_resource type="PackedScene" uid="uid://dvxw6i47rd0g0" path="res://Scenes/Traps/smart_fire.tscn" id="6_alkdt"]
 [ext_resource type="PackedScene" uid="uid://crig2ei56xpcc" path="res://Scenes/Traps/smart_spike.tscn" id="7_5koe3"]
 [ext_resource type="PackedScene" uid="uid://bl05h8b5ah8ta" path="res://Scenes/Traps/hidden_spike.tscn" id="7_eyy50"]
 [ext_resource type="PackedScene" uid="uid://72nyw3eyiwp3" path="res://Scenes/Traps/visible_fire.tscn" id="8_3hcvm"]
 [ext_resource type="PackedScene" uid="uid://dt2ya1iv87kmb" path="res://Scenes/Traps/visible_spike.tscn" id="9_vb774"]
-[ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods tileset/Trees.png" id="1_km4ix"]
-[ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods tileset/First Asset pack.png" id="2_hs8m4"]
-[ext_resource type="Texture2D" uid="uid://bkquthxswt31s" path="res://Assets/Tilesets/Greenwoods tileset/Props.png" id="3_p7s5l"]
-[ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="4_mlevm"]
-[ext_resource type="PackedScene" uid="uid://dpbywo28tfxty" path="res://Scenes/Enemies/golem.tscn" id="5_8mibh"]
-[ext_resource type="PackedScene" uid="uid://cqc1fhfblf7qh" path="res://Scenes/Enemies/goblin.tscn" id="6_84mtq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uoxtc"]
 texture = ExtResource("1_km4ix")
@@ -2554,7 +2550,8 @@ position = Vector2(-465, -129)
 currentHealth = 90
 maxHealth = 100
 dashDist = 60
-[node name="Player" parent="." instance=ExtResource("4_mlevm")]
+
+[node name="Player2" parent="." instance=ExtResource("4_mlevm")]
 position = Vector2(-23, 180)
 
 [node name="Golem" parent="." instance=ExtResource("5_8mibh")]

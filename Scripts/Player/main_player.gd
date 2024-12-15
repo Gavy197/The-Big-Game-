@@ -176,7 +176,6 @@ func slashAttack():
 		instance.damage= slashAttackDmg
 		if scale.y<0:
 			instance.targetAngle=get_angle_to(get_global_mouse_position())-PI
-			print("negitive")
 		elif scale.y>0:
 			instance.targetAngle=get_angle_to(get_global_mouse_position())
 		instance.creator=self

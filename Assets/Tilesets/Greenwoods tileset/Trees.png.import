@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c20h4mxnmdk6k"
-path="res://.godot/imported/Trees.png-565b1d194d8d352c6381a3897b6d116f.ctex"
+path="res://.godot/imported/Trees.png-0228a22cc128d7856f79d810cc3a82c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Greenwoods Tileset/Trees.png"
-dest_files=["res://.godot/imported/Trees.png-565b1d194d8d352c6381a3897b6d116f.ctex"]
+source_file="res://Assets/Tilesets/Greenwoods tileset/Trees.png"
+dest_files=["res://.godot/imported/Trees.png-0228a22cc128d7856f79d810cc3a82c1.ctex"]
 
 [params]
 

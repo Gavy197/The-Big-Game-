@@ -1,11 +1,11 @@
 [gd_scene load_steps=38 format=4 uid="uid://bngjrbsm8xlmb"]
 
 [ext_resource type="PackedScene" path="res://Scenes/HUD/hudcanvaslayer.tscn" id="1_8fg84"]
-[ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods Tileset/Trees.png" id="1_pggjn"]
-[ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods Tileset/First Asset pack.png" id="2_c2qmd"]
+[ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods tileset/Trees.png" id="1_pggjn"]
+[ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods tileset/First Asset pack.png" id="2_c2qmd"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="3_1dbew"]
-[ext_resource type="Texture2D" uid="uid://bkquthxswt31s" path="res://Assets/Tilesets/Greenwoods Tileset/Props.png" id="3_i7nit"]
-[ext_resource type="Texture2D" uid="uid://wb2flnee2lbw" path="res://Assets/Tilesets/Greenwoods Tileset/Serene_Village_revamped_v1.9/SERENE_VILLAGE_REVAMPED/Serene_Village_32x32.png" id="4_b6jcg"]
+[ext_resource type="Texture2D" uid="uid://bkquthxswt31s" path="res://Assets/Tilesets/Greenwoods tileset/Props.png" id="3_i7nit"]
+[ext_resource type="Texture2D" uid="uid://wb2flnee2lbw" path="res://Assets/Tilesets/Greenwoods tileset/Serene_Village_revamped_v1.9/SERENE_VILLAGE_REVAMPED/Serene_Village_32x32.png" id="4_b6jcg"]
 [ext_resource type="PackedScene" path="res://Scenes/Levels/portal.tscn" id="6_bfqxi"]
 [ext_resource type="PackedScene" uid="uid://dmljr6nwigy1f" path="res://Scenes/Traps/hidden_fire.tscn" id="6_lp1mn"]
 [ext_resource type="PackedScene" uid="uid://bl05h8b5ah8ta" path="res://Scenes/Traps/hidden_spike.tscn" id="7_1uced"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/Pickups/medipack.tscn" id="10_rgp7k"]
 [ext_resource type="PackedScene" path="res://Scenes/Pickups/fish.tscn" id="11_1ek1s"]
 [ext_resource type="PackedScene" uid="uid://dt2ya1iv87kmb" path="res://Scenes/Traps/visible_spike.tscn" id="11_d1asc"]
-[ext_resource type="Resource" uid="uid://4kx0vxan4yow" path="res://Scenes/HUD/inventory/Fish.tres" id="13_od04d"]
+[ext_resource type="Resource" uid="uid://cr8e0xylc07pv" path="res://Scenes/HUD/inventory/Fish.tres" id="13_od04d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uoxtc"]
 texture = ExtResource("1_pggjn")
