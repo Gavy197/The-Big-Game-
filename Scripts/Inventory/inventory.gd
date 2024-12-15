@@ -40,6 +40,7 @@ func insertSlot(index: int, inventorySlot: InventorySlot):
 	
 	
 func use_item(inventorySlot:InventorySlot) -> void:
+	print(inventorySlot)
 	var index = slots.find(inventorySlot)
 	if index < 0 || index >= slots.size() || !slots[index].item: return
 	updated.emit()

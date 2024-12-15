@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dn8ehn8o5ju75"]
+[gd_scene load_steps=24 format=4 uid="uid://4ymk04hqohgx"]
 
 [ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods tileset/Trees.png" id="1_vct5d"]
 [ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods tileset/First Asset pack.png" id="2_qhrly"]
@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ciixtfl1ol2e7" path="res://Assets/Tilesets/dungeon tileset/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="4_6ojf7"]
 [ext_resource type="Texture2D" uid="uid://ltmw0m4psiys" path="res://Assets/Tilesets/dungeon tileset/Tiles.png" id="5_h5t7m"]
 [ext_resource type="PackedScene" uid="uid://bo3q1nxbpek1r" path="res://Scenes/Players/main_player.tscn" id="6_6vswy"]
-[ext_resource type="PackedScene" uid="uid://c6mrf76fn7r2o" path="res://Scenes/HUD/hudcanvaslayer.tscn" id="8_8bn88"]
-[ext_resource type="PackedScene" path="res://Scenes/Levels/portal.tscn" id="8_25v8w"]
+[ext_resource type="PackedScene" uid="uid://t1psbrc28ckx" path="res://Scenes/HUD/hudcanvaslayer.tscn" id="8_8bn88"]
+[ext_resource type="PackedScene" uid="uid://cm7iggxj5yryw" path="res://Scenes/Levels/portal.tscn" id="8_25v8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0y7r8"]
 texture = ExtResource("1_vct5d")
@@ -1206,7 +1206,7 @@ sources/0 = SubResource("TileSetAtlasSource_0y7r8")
 sources/2 = SubResource("TileSetAtlasSource_sanbm")
 sources/3 = SubResource("TileSetAtlasSource_mjs0i")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lh456"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a078y"]
 texture = ExtResource("5_h5t7m")
 texture_region_size = Vector2i(12, 12)
 0:0/0 = 0
@@ -1772,7 +1772,7 @@ texture_region_size = Vector2i(12, 12)
 10:29/0 = 0
 11:29/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wkjnn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejt7h"]
 texture = ExtResource("4_6ojf7")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -1899,7 +1899,7 @@ texture = ExtResource("4_6ojf7")
 9:9/0 = 0
 6:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6a8x4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nvjlv"]
 texture = ExtResource("2_qhrly")
 texture_region_size = Vector2i(12, 12)
 4:0/0 = 0
@@ -2367,9 +2367,9 @@ texture_region_size = Vector2i(12, 12)
 
 [sub_resource type="TileSet" id="TileSet_en48w"]
 physics_layer_0/collision_layer = 1
-sources/7 = SubResource("TileSetAtlasSource_6a8x4")
-sources/0 = SubResource("TileSetAtlasSource_lh456")
-sources/2 = SubResource("TileSetAtlasSource_wkjnn")
+sources/7 = SubResource("TileSetAtlasSource_nvjlv")
+sources/0 = SubResource("TileSetAtlasSource_a078y")
+sources/2 = SubResource("TileSetAtlasSource_ejt7h")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtrnu"]
 texture = ExtResource("1_vct5d")
@@ -4688,6 +4688,5 @@ position = Vector2(-853, -793)
 
 [node name="Portal" parent="." instance=ExtResource("8_25v8w")]
 position = Vector2(1244, 111)
-isexit = false
 
 [node name="Hudcanvaslayer" parent="." instance=ExtResource("8_8bn88")]

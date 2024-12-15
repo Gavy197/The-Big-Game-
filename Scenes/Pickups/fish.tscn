@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg2p4jj37iiyv"]
+[gd_scene load_steps=4 format=3 uid="uid://blh0cep4fojb7"]
 
 [ext_resource type="Script" path="res://Scripts/gui/collectable.gd" id="1_6yma3"]
 [ext_resource type="Texture2D" uid="uid://b86bki1d7lksh" path="res://Assets/Pickups/Fish.png" id="2_twg4v"]
@@ -8,6 +8,8 @@ size = Vector2(7, 6)
 
 [node name="fish" type="Area2D"]
 z_index = 1
+collision_layer = 128
+collision_mask = 128
 script = ExtResource("1_6yma3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
