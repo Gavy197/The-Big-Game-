@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://crig2ei56xpcc"]
+
+[ext_resource type="PackedScene" uid="uid://u2n4il36e7wb" path="res://Scenes/Traps/spikeTrap.tscn" id="1_dolst"]
+
+[node name="smartSpike" type="Node2D"]
+
+[node name="spikeTrap" parent="." instance=ExtResource("1_dolst")]
