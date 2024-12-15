@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpblafaa8is2"
-path="res://.godot/imported/Serene_Village_16x16.png-f8aaa5973d4d1c65d6fa9cd3c13ef734.ctex"
+path="res://.godot/imported/Serene_Village_16x16.png-87c758c30465861df58e0eaebfb218ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Greenwoods Tileset/Serene_Village_revamped_v1.9/SERENE_VILLAGE_REVAMPED/Serene_Village_16x16.png"
-dest_files=["res://.godot/imported/Serene_Village_16x16.png-f8aaa5973d4d1c65d6fa9cd3c13ef734.ctex"]
+source_file="res://Assets/Tilesets/Greenwoods tileset/Serene_Village_revamped_v1.9/SERENE_VILLAGE_REVAMPED/Serene_Village_16x16.png"
+dest_files=["res://.godot/imported/Serene_Village_16x16.png-87c758c30465861df58e0eaebfb218ef.ctex"]
 
 [params]
 

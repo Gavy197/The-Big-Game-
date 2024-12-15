@@ -160,6 +160,7 @@ radius = 4.0
 height = 18.0
 
 [node name="slash" type="StaticBody2D"]
+z_index = 1
 collision_layer = 0
 script = ExtResource("1_f6cei")
 SPEED = 2
@@ -174,7 +175,7 @@ scale = Vector2(0.05, 0.08)
 sprite_frames = SubResource("SpriteFrames_kswi0")
 animation = &"defult"
 autoplay = "defult"
-frame_progress = 0.279285
+frame_progress = 0.705096
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
