@@ -3402,7 +3402,7 @@ texture_region_size = Vector2i(12, 12)
 tile_size = Vector2i(12, 12)
 sources/7 = SubResource("TileSetAtlasSource_6sv6v")
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6no64"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_itafb"]
 scenes/1/scene = ExtResource("6_lp1mn")
 scenes/2/scene = ExtResource("7_1uced")
 scenes/3/scene = ExtResource("8_nr07v")
@@ -3412,7 +3412,7 @@ scenes/6/scene = ExtResource("11_d1asc")
 
 [sub_resource type="TileSet" id="TileSet_oqlcu"]
 tile_size = Vector2i(30, 28)
-sources/1 = SubResource("TileSetScenesCollectionSource_6no64")
+sources/1 = SubResource("TileSetScenesCollectionSource_itafb")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vef6e"]
 texture = ExtResource("1_pggjn")
@@ -5788,33 +5788,30 @@ tile_set = SubResource("TileSet_w7bs0")
 [node name="Player" parent="." instance=ExtResource("3_1dbew")]
 z_index = 2
 position = Vector2(-2174, 74)
-currentHealth = 90
-maxHealth = 100
-dashDist = 60
 
 [node name="Portal" parent="." instance=ExtResource("6_bfqxi")]
 position = Vector2(-2286, 197)
 
 [node name="beaf" parent="." instance=ExtResource("7_ira35")]
-position = Vector2(-680, -98)
+position = Vector2(-2188, 263)
 
 [node name="calamari" parent="." instance=ExtResource("8_60d24")]
-position = Vector2(-639, -51)
+position = Vector2(-2147, 310)
 
 [node name="coin" parent="." instance=ExtResource("9_xr7yu")]
-position = Vector2(-1997, 49)
+position = Vector2(-2285, 38)
 
 [node name="coin2" parent="." instance=ExtResource("9_xr7yu")]
-position = Vector2(-2069, 9)
+position = Vector2(-2317, 27)
 
 [node name="coin4" parent="." instance=ExtResource("9_xr7yu")]
-position = Vector2(-2069, 108)
+position = Vector2(-2297, 23)
 
 [node name="coin5" parent="." instance=ExtResource("9_xr7yu")]
-position = Vector2(-2154, -1)
+position = Vector2(-2373, 84)
 
 [node name="coin6" parent="." instance=ExtResource("9_xr7yu")]
-position = Vector2(-2253, -18)
+position = Vector2(-2335, 61)
 
 [node name="coin7" parent="." instance=ExtResource("9_xr7yu")]
 position = Vector2(-2335, 27)
@@ -5823,20 +5820,20 @@ position = Vector2(-2335, 27)
 position = Vector2(-2389, 70)
 
 [node name="coin9" parent="." instance=ExtResource("9_xr7yu")]
-position = Vector2(-2417, 143)
+position = Vector2(-2353, 69)
 
 [node name="coin10" parent="." instance=ExtResource("9_xr7yu")]
-position = Vector2(-2419, 218)
+position = Vector2(-2363, 44)
 
 [node name="coin11" parent="." instance=ExtResource("9_xr7yu")]
-position = Vector2(-2374, 289)
+position = Vector2(-2322, 50)
 
 [node name="coin3" parent="." instance=ExtResource("9_xr7yu")]
-position = Vector2(-2030, 142)
+position = Vector2(-2306, 47)
 
 [node name="medipack" parent="." instance=ExtResource("10_rgp7k")]
-position = Vector2(-389, -164)
+position = Vector2(-2124, 216)
 
 [node name="fish" parent="." instance=ExtResource("11_1ek1s")]
-position = Vector2(-601, -326)
+position = Vector2(-2095, 274)
 itemRes = ExtResource("13_od04d")

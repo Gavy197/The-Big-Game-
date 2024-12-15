@@ -42,6 +42,14 @@ var dmgMultiplier=1
 
 func _ready() -> void:
 	dashCD.wait_time=dashCooldown
+	#Sets the max health based on the global variable
+	maxHealth=Global.maxHealth
+	currentHealth=Global.currentHealth
+	healthChanged.emit()
+	print(maxHealth)
+	#Allows for respawning with max health
+	Global.currentHealth=maxHealth
+	
 func _physics_process(delta: float) -> void:
 	#frequently updates dash checker
 	if velocity!=Vector2(0,0):
@@ -210,6 +218,8 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 		currentHealth-=amount
 	else:
 		currentHealth-= amount*.5
+	if currentHealth<=0:
+		death()
 	print("player ",currentHealth)
 
 
@@ -218,9 +228,18 @@ func _on_light_attack_area_body_entered(body: Node2D) -> void:
 		body.takeDamage(lightAttackDmg*dmgMultiplier,self)
 
 
-
-
 func _on_pickup_area_area_entered(area: Area2D) -> void:
 	if area.has_method("collect"):
 		area.collect(inventory)
 	 
+#Saves the player's current and max health when you go through the portal
+func saveHealth():
+	Global.maxHealth=maxHealth
+	Global.currentHealth=currentHealth
+#Kills the player
+func death():
+	print("dead")
+	#Reloads the current Scene
+	get_tree().reload_current_scene()
+	#Sets health to full for next life
+	
