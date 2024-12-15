@@ -2524,7 +2524,7 @@ scenes/6/scene = ExtResource("9_vb774")
 tile_size = Vector2i(30, 28)
 sources/1 = SubResource("TileSetScenesCollectionSource_tmma5")
 
-[node name="Overworld" type="Node2D"]
+[node name="Overworld2" type="Node2D"]
 
 [node name="Props" type="TileMapLayer" parent="."]
 z_index = -1
