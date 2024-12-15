@@ -46,7 +46,7 @@ func death(attacker:CharacterBody2D):
 func takeDamage(amount:int,attacker:CharacterBody2D):
 	#Makes the slime take more damage if it's a clone
 	if(isClone==true):
-		amount+=2
+		amount+=1
 	#Creates a dmg indicator with the amout of damage taken
 	var instance = dmgIndicator.instantiate()
 	add_child(instance)

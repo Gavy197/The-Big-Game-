@@ -5,6 +5,7 @@ const SPEED = 200.0
 
 #Varibales
 @export var health: int = 100
+var blocking:bool=false
 var normalMove:bool =true
 @export var dashDist:int=60
 @export var dashCooldown=2
@@ -12,6 +13,7 @@ var normalMove:bool =true
 #Attacking Variables
 @export var lightAttackDmg:int =3
 @export var slashAttackDmg:int =1
+@export var bubbleDmg:int =2
 var dmgMultiplier=1
 #Onreadys
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -19,11 +21,14 @@ var dmgMultiplier=1
 @onready var dashCast:RayCast2D=$dashCast
 @onready var lightAttackColision: CollisionShape2D = $lightAttackArea/CollisionShape2D
 @onready var slashCD: Timer = $slashCD
+@onready var bubbleCD: Timer = $bubbleCD
+
 
 
 #Preloads
 @onready var dashEffect=preload("res://Scenes/Players/dash_effect.tscn")
 @onready var slash=preload("res://Scenes/Players/slash.tscn")
+@onready var bubble=preload("res://Scenes/Players/bubble.tscn")
 
 func _ready() -> void:
 	dashCD.wait_time=dashCooldown
@@ -80,6 +85,8 @@ func _input(event: InputEvent) -> void:
 		lightAttack()
 	if Input.is_action_just_pressed("slashAttack"):
 		slashAttack()
+	if Input.is_action_just_pressed("bubble"):
+		bubbleAttack()
 			
 func dash():
 	#Makes the dash direction start as 0,0
@@ -170,8 +177,30 @@ func slashAttack():
 		await(animated_sprite_2d.animation_finished)
 		normalMove=true
 
+func bubbleAttack():
+	#Makes sure the cooldown is at 0
+	if bubbleCD.time_left==0:
+		#Freezes movement
+		normalMove=false
+		velocity=Vector2.ZERO
+		#Plays animation
+		animated_sprite_2d.play("Idle")
+		#Adds the bubble to the scene and sets the position
+		var instance=bubble.instantiate()
+		instance.global_position=global_position
+		instance.creator=self
+		instance.damage=bubbleDmg
+		add_sibling(instance)
+		blocking=true
+		await(instance.popped)
+		bubbleCD.start()
+
 func takeDamage(amount:int,attacker:CharacterBody2D):
-	health-=amount
+	#Reduces damage if blocking
+	if blocking==false:
+		health-=amount
+	else:
+		health-= amount*.5
 	print("player ",health)
 
 

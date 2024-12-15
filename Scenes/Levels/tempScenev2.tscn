@@ -2527,8 +2527,8 @@ tile_set = SubResource("TileSet_w7bs0")
 position = Vector2(-23, 180)
 
 [node name="Golem" parent="." instance=ExtResource("5_8mibh")]
-position = Vector2(-910, 7)
+position = Vector2(-1623, -242)
 enemyBehavior = 0
 
 [node name="Goblin" parent="." instance=ExtResource("6_84mtq")]
-position = Vector2(-624, 243)
+position = Vector2(-277, 130)

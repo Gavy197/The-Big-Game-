@@ -272,6 +272,7 @@ script = ExtResource("1_ajyaa")
 dashCooldown = 1
 effectCount = 10
 slashAttackDmg = 4
+bubbleDmg = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 19)
@@ -308,6 +309,10 @@ disabled = true
 
 [node name="slashCD" type="Timer" parent="."]
 wait_time = 1.8
+one_shot = true
+
+[node name="bubbleCD" type="Timer" parent="."]
+wait_time = 2.5
 one_shot = true
 
 [connection signal="body_entered" from="lightAttackArea" to="." method="_on_light_attack_area_body_entered"]
