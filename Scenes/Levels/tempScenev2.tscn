@@ -2551,9 +2551,6 @@ currentHealth = 90
 maxHealth = 100
 dashDist = 60
 
-[node name="Player2" parent="." instance=ExtResource("4_mlevm")]
-position = Vector2(-23, 180)
-
 [node name="Golem" parent="." instance=ExtResource("5_8mibh")]
 position = Vector2(-1623, -242)
 enemyBehavior = 0
