@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bngjrbsm8xlmb"]
+[gd_scene load_steps=39 format=4 uid="uid://bngjrbsm8xlmb"]
 
 [ext_resource type="PackedScene" uid="uid://t1psbrc28ckx" path="res://Scenes/HUD/hudcanvaslayer.tscn" id="1_8fg84"]
 [ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods tileset/Trees.png" id="1_pggjn"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://blh0cep4fojb7" path="res://Scenes/Pickups/fish.tscn" id="11_1ek1s"]
 [ext_resource type="PackedScene" uid="uid://dt2ya1iv87kmb" path="res://Scenes/Traps/visible_spike.tscn" id="11_d1asc"]
 [ext_resource type="Resource" uid="uid://cr8e0xylc07pv" path="res://Scenes/HUD/inventory/Fish.tres" id="13_od04d"]
+[ext_resource type="PackedScene" uid="uid://4ymk04hqohgx" path="res://Scenes/Levels/dungeon.tscn" id="14_31mus"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uoxtc"]
 texture = ExtResource("1_pggjn")
@@ -5791,6 +5792,7 @@ position = Vector2(-2174, 74)
 
 [node name="Portal" parent="." instance=ExtResource("6_bfqxi")]
 position = Vector2(-2286, 197)
+target = ExtResource("14_31mus")
 
 [node name="beaf" parent="." instance=ExtResource("7_ira35")]
 position = Vector2(-2188, 263)

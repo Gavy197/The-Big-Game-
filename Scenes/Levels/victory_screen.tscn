@@ -1178,7 +1178,7 @@ sources/2 = SubResource("TileSetAtlasSource_ffgoy")
 
 [sub_resource type="Curve2D" id="Curve2D_douc3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 84, -198, 0, 0, 0, 0, 130, -49, 0, 0, 0, 0, 62, 1, 0, 0, 0, 0, -52, 0, 0, 0, 0, 0, -138, 24, 0, 0, 0, 0, -239, 39)
+"points": PackedVector2Array(0, 0, 0, 0, 84, -198, 0, 0, 0, 0, 130, -49, 0, 0, 0, 0, 91, -8, 0, 0, 0, 0, -52, 15, 0, 0, 0, 0, -138, 24, 0, 0, 0, 0, -239, 39)
 }
 point_count = 6
 
@@ -1490,9 +1490,9 @@ zoom = Vector2(3, 3)
 curve = SubResource("Curve2D_douc3")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(88.4272, -183.66)
+position = Vector2(88.4289, -183.654)
 rotation = 1.27135
-progress = 15.0201
+progress = 15.0256
 
 [node name="boat" type="Sprite2D" parent="Path2D/PathFollow2D"]
 position = Vector2(-0.330893, -0.894173)
