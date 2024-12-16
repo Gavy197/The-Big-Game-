@@ -90,23 +90,24 @@ func death(attacker:CharacterBody2D):
 		queue_free()
 
 func takeDamage(amount:int,attacker:CharacterBody2D):
-	
-	#Creates a dmg indicator with the amout of damage taken
-	var instance = dmgIndicator.instantiate()
-	add_child(instance)
-	instance.text=str(amount)
-	#moves the text up a bit
-	instance.position.y=-50
-	health-=amount
-	print("golem ",health)
-	if health<=0:
-		death(attacker)
-		dying=true
-	#Changes the target to whoever last attacked
-	target=attacker
-	#resets attacking
-	canAttack=false
-	attackCooldown.start()
+	#Prevents golems attacking other golems
+	if attacker!= Golem:
+		#Creates a dmg indicator with the amout of damage taken
+		var instance = dmgIndicator.instantiate()
+		add_child(instance)
+		instance.text=str(amount)
+		#moves the text up a bit
+		instance.position.y=-50
+		health-=amount
+		print("golem ",health)
+		if health<=0:
+			death(attacker)
+			dying=true
+		#Changes the target to whoever last attacked
+		target=attacker
+		#resets attacking
+		canAttack=false
+		attackCooldown.start()
 
 #Modifies the function that detemines the target, in order to be able to attack other eneimes
 func _on_targeting_body_entered(body:Node2D) -> void:
