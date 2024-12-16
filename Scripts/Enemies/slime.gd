@@ -21,13 +21,14 @@ func attack():
 		#Makes sure the target is still in range
 		if health>0 and inRange==true:
 			#print("attack")
-			target.takeDamage(damage,self)
-			#Starts a cooldown before it can attack again
-			attackTimer.start(attackTime)
-			await(attackTimer.timeout)
-			#If the target is still in range, it'll attack again
-			if inRange==true:
-				attack()
+			if target!=null:
+				target.takeDamage(damage,self)
+				#Starts a cooldown before it can attack again
+				attackTimer.start(attackTime)
+				await(attackTimer.timeout)
+				#If the target is still in range, it'll attack again
+				if inRange==true:
+					attack()
 		
 
 

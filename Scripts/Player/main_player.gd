@@ -248,6 +248,8 @@ func death():
 		velocity=Vector2.ZERO
 		#Locks input
 		lockInput=true
+		#Clears inventory
+		inventory.clear()
 		#Plays animation
 		animated_sprite_2d.play("death")
 		await(animated_sprite_2d.animation_finished)

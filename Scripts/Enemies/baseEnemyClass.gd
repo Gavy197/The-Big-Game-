@@ -109,7 +109,8 @@ func _on_targeting_body_exited(body:Node2D) -> void:
 			#Starts the attention timer, 
 			#once it runs out the enemy losses intrests 
 			#and picks a random direction again
-			attentionTimer.start()
+			if is_inside_tree()==true:
+				attentionTimer.start()
 
 
 func _on_wall_check_is_colliding() -> void:

@@ -30,6 +30,7 @@ func _on_sensor_body_entered(body: Node2D) -> void:
 				if i.item==coin:
 					#Sets the amout of coins the player has equal to the amout of coins in the inventory
 					currentCoins=i.amount
+					print(currentCoins)
 			#Activates the portal if you have enough coins
 			if currentCoins>=cost:
 				animation_player.play("portalWake")

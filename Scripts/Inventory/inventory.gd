@@ -6,6 +6,11 @@ signal updated
 
 @export var slots: Array[InventorySlot]
 
+func clear():
+	for i in slots:
+		var index = slots.find(i)
+		remove_at_index(index)
+
 func insert(item: InventoryItem):
 	var itemSlots = slots.filter(func(slot): return slot.item == item)
 	if !itemSlots.is_empty():
