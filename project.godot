@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="The Big Game"
-run/main_scene="res://Scenes/Levels/overworld.tscn"
+run/main_scene="res://Scenes/Levels/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Scenes/global.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [input]
 

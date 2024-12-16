@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://jgln0815u8kh"]
+[gd_scene load_steps=5 format=3 uid="uid://tqrnafcj0mym"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/slot_gui.gd" id="1_162wx"]
 [ext_resource type="Texture2D" uid="uid://bstcxyimfenm0" path="res://Assets/HUD Items/inventorySlot.png" id="1_qeho7"]

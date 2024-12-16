@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsxuyvwn1ehdy"]
+[gd_scene load_steps=5 format=3 uid="uid://buk0bnfeev7yn"]
 
 [ext_resource type="Script" path="res://Scripts/gui/collectable.gd" id="1_nml45"]
-[ext_resource type="Resource" uid="uid://84j32ai4ydnt" path="res://Scenes/HUD/inventory/Beaf.tres" id="2_e56bj"]
+[ext_resource type="Resource" uid="uid://b25yxbg7edqg1" path="res://Scenes/HUD/inventory/Beaf.tres" id="2_e56bj"]
 [ext_resource type="Texture2D" uid="uid://c3vbofrdxrixy" path="res://Assets/Pickups/Beaf.png" id="3_k7uql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ro5x1"]
@@ -9,6 +9,8 @@ size = Vector2(7, 6)
 
 [node name="beaf" type="Area2D"]
 z_index = 1
+collision_layer = 128
+collision_mask = 128
 script = ExtResource("1_nml45")
 itemRes = ExtResource("2_e56bj")
 

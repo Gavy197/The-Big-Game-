@@ -8,6 +8,7 @@ var isOpen: bool = false
 
 @onready var inventory: Inventory = preload("res://Scenes/HUD/PlayerInventory.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var player:CharacterBody2D = $"../../Player"
 
 func _ready():
 	inventory.updated.connect(update)
@@ -20,10 +21,12 @@ func update():
 		slots[i].update(inventory.slots[i])
 
 func open():
-	visible = true
-	isOpen = true
-	get_tree().paused = true
-	opened.emit()
+	#Prevents opening if dying
+	if player.dying==false:
+		visible = true
+		isOpen = true
+		get_tree().paused = true
+		opened.emit()
 	
 func close():
 	get_tree().paused = false

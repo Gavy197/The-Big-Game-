@@ -1,9 +1,11 @@
 Asset Sources:
-
-
+Portal: https://frostwindz.itch.io/pixel-art-fantasy-animated-portal
+Menu Background: https://edermunizz.itch.io/free-pixel-art-forest
+Attack Animations:https://jellyfish0.itch.io/50-assorted
 
 Tutorials/References:
 
 
 
 External Help:
+Hugo Inspired the Menu

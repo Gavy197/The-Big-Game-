@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brx1s7jf38d1o"
-path="res://.godot/imported/Nether_Portal.webp-9e3f0045860cc5a7081857b533321236.ctex"
+uid="uid://c41v44i4wsy43"
+path="res://.godot/imported/Background.png-fd602c7fa6257179c849994529192592.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Nether_Portal.webp"
-dest_files=["res://.godot/imported/Nether_Portal.webp-9e3f0045860cc5a7081857b533321236.ctex"]
+source_file="res://Assets/Backgrounds/Background.png"
+dest_files=["res://.godot/imported/Background.png-fd602c7fa6257179c849994529192592.ctex"]
 
 [params]
 

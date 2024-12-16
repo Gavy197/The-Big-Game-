@@ -7,16 +7,13 @@ signal healthChanged
 const SPEED = 200.0
 
 #Varibales
+var dying:bool=false
 var blocking:bool=false
+var lockInput=false
 @export var currentHealth: int = 90
-#Varibales
-#@export var inventory: Inventory
+var normalMove:bool =true
 @export var maxHealth: int = 100
 @export var inventory: Inventory
-
-
-
-var normalMove:bool =true
 @export var dashDist:int=60
 @export var dashCooldown=2
 @export var effectCount:int=5
@@ -42,6 +39,14 @@ var dmgMultiplier=1
 
 func _ready() -> void:
 	dashCD.wait_time=dashCooldown
+	#Sets the max health based on the global variable
+	maxHealth=Global.maxHealth
+	currentHealth=Global.currentHealth
+	healthChanged.emit()
+	print(maxHealth)
+	#Allows for respawning with max health
+	Global.currentHealth=maxHealth
+	
 func _physics_process(delta: float) -> void:
 	#frequently updates dash checker
 	if velocity!=Vector2(0,0):
@@ -84,19 +89,21 @@ func _physics_process(delta: float) -> void:
 
 #Detects inputs for all other actions (dashing, attacking,ect)
 func _input(event: InputEvent) -> void:
-	#Handles dashing
-	if Input.is_action_just_pressed("Dash"):
-		#Makes sure you are stopped to dash
-		if velocity!=Vector2(0,0):
-			#makes sure that the dashCD has expired
-			if dashCD.time_left==0:
-				dash()
-	if Input.is_action_just_pressed("lightAttack"):
-		lightAttack()
-	if Input.is_action_just_pressed("slashAttack"):
-		slashAttack()
-	if Input.is_action_just_pressed("bubble"):
-		bubbleAttack()
+	#Makes sure inputs are unlocked
+	if lockInput==false:
+		#Handles dashing
+		if Input.is_action_just_pressed("Dash"):
+			#Makes sure you are stopped to dash
+			if velocity!=Vector2(0,0):
+				#makes sure that the dashCD has expired
+				if dashCD.time_left==0:
+					dash()
+		if Input.is_action_just_pressed("lightAttack"):
+			lightAttack()
+		if Input.is_action_just_pressed("slashAttack"):
+			slashAttack()
+		if Input.is_action_just_pressed("bubble"):
+			bubbleAttack()
 			
 func dash():
 	#Makes the dash direction start as 0,0
@@ -210,6 +217,8 @@ func takeDamage(amount:int,attacker:CharacterBody2D):
 		currentHealth-=amount
 	else:
 		currentHealth-= amount*.5
+	if currentHealth<=0:
+		death()
 	print("player ",currentHealth)
 
 
@@ -218,9 +227,32 @@ func _on_light_attack_area_body_entered(body: Node2D) -> void:
 		body.takeDamage(lightAttackDmg*dmgMultiplier,self)
 
 
-
-
 func _on_pickup_area_area_entered(area: Area2D) -> void:
 	if area.has_method("collect"):
 		area.collect(inventory)
 	 
+#Saves the player's current and max health when you go through the portal
+func saveHealth():
+	Global.maxHealth=maxHealth
+	Global.currentHealth=currentHealth
+#Kills the player
+func death():
+	#Prevents death from running multiple times
+	if dying==false:
+		dying=true
+		#Disables the hurtbox to prevent more damage
+		$Hurtbox.disabled=true
+		print("dead")
+		#Locks movement
+		normalMove=false
+		velocity=Vector2.ZERO
+		#Locks input
+		lockInput=true
+		#Clears inventory
+		inventory.clear()
+		#Plays animation
+		animated_sprite_2d.play("death")
+		await(animated_sprite_2d.animation_finished)
+		#Reloads the current Scene
+		get_tree().call_deferred("reload_current_scene")
+		
