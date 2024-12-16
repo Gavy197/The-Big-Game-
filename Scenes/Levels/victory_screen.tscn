@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dfkvlj2hbu0b5" path="res://Assets/Player/Kinght color silver/_Run.png" id="6_djaec"]
 [ext_resource type="Texture2D" uid="uid://sjlpxwvw411" path="res://Assets/Player/Kinght color silver/_Attack2.png" id="7_ehaha"]
 [ext_resource type="Texture2D" uid="uid://dvwrd2o4bwvx1" path="res://Assets/Player/Kinght color silver/_Attack.png" id="8_k1kfg"]
-[ext_resource type="FontFile" uid="uid://dwc4bl618qiyw" path="res://Assets/Fonts/pixleFont.ttf" id="9_ge3oj"]
+[ext_resource type="FontFile" uid="uid://8p8a86wkjymu" path="res://Assets/Fonts/DMSerifText-Regular.ttf" id="9_4yffa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqhjf"]
 texture = ExtResource("1_asd52")
@@ -1490,7 +1490,7 @@ zoom = Vector2(3, 3)
 curve = SubResource("Curve2D_douc3")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(78.9982, -188.894)
+position = Vector2(78.9981, -188.894)
 rotation = 2.0731
 progress = 10.4081
 
@@ -1519,11 +1519,12 @@ libraries = {
 autoplay = "new_animation"
 
 [node name="Label" type="Label" parent="."]
-offset_left = -179.0
-offset_top = -105.0
-offset_right = -9.0
-offset_bottom = -56.0
-theme_override_fonts/font = ExtResource("9_ge3oj")
-theme_override_font_sizes/font_size = 24
+offset_left = -172.0
+offset_top = -119.0
+offset_right = 172.0
+offset_bottom = 18.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("9_4yffa")
+theme_override_font_sizes/font_size = 48
 text = "YOU ESCAPED THE ISLAND!"
 autowrap_mode = 2
