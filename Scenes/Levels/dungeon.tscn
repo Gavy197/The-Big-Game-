@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://4ymk04hqohgx"]
+[gd_scene load_steps=34 format=4 uid="uid://4ymk04hqohgx"]
 
 [ext_resource type="Texture2D" uid="uid://c20h4mxnmdk6k" path="res://Assets/Tilesets/Greenwoods tileset/Trees.png" id="1_vct5d"]
 [ext_resource type="Texture2D" uid="uid://c8xixbybjh0u7" path="res://Assets/Tilesets/Greenwoods tileset/First Asset pack.png" id="2_qhrly"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://crig2ei56xpcc" path="res://Scenes/Traps/smart_spike.tscn" id="9_vbtgm"]
 [ext_resource type="PackedScene" uid="uid://72nyw3eyiwp3" path="res://Scenes/Traps/visible_fire.tscn" id="10_4hx7p"]
 [ext_resource type="PackedScene" uid="uid://dt2ya1iv87kmb" path="res://Scenes/Traps/visible_spike.tscn" id="11_tpwdu"]
+[ext_resource type="PackedScene" uid="uid://dkxg1vo6y8sv7" path="res://Scenes/Levels/victory_screen.tscn" id="14_c4lop"]
+[ext_resource type="PackedScene" uid="uid://cfaofnn7ik126" path="res://Scenes/Pickups/coin.tscn" id="16_2cumb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0y7r8"]
 texture = ExtResource("1_vct5d")
@@ -4711,6 +4713,39 @@ position = Vector2(-853, -793)
 
 [node name="Portal" parent="." instance=ExtResource("8_25v8w")]
 position = Vector2(1244, 111)
+target = ExtResource("14_c4lop")
 
 [node name="Hudcanvaslayer" parent="." instance=ExtResource("8_8bn88")]
-visible = false
+
+[node name="coin" parent="." instance=ExtResource("16_2cumb")]
+position = Vector2(1103, 126)
+
+[node name="coin2" parent="." instance=ExtResource("16_2cumb")]
+position = Vector2(1071, 115)
+
+[node name="coin4" parent="." instance=ExtResource("16_2cumb")]
+position = Vector2(1091, 111)
+
+[node name="coin5" parent="." instance=ExtResource("16_2cumb")]
+position = Vector2(1015, 172)
+
+[node name="coin6" parent="." instance=ExtResource("16_2cumb")]
+position = Vector2(1053, 149)
+
+[node name="coin7" parent="." instance=ExtResource("16_2cumb")]
+position = Vector2(1053, 115)
+
+[node name="coin8" parent="." instance=ExtResource("16_2cumb")]
+position = Vector2(999, 158)
+
+[node name="coin9" parent="." instance=ExtResource("16_2cumb")]
+position = Vector2(1035, 157)
+
+[node name="coin10" parent="." instance=ExtResource("16_2cumb")]
+position = Vector2(1025, 132)
+
+[node name="coin11" parent="." instance=ExtResource("16_2cumb")]
+position = Vector2(1066, 138)
+
+[node name="coin3" parent="." instance=ExtResource("16_2cumb")]
+position = Vector2(1082, 135)
