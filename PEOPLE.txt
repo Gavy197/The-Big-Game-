@@ -4,7 +4,10 @@ Menu Background: https://edermunizz.itch.io/free-pixel-art-forest
 Attack Animations:https://jellyfish0.itch.io/50-assorted
 
 Tutorials/References:
-
+Inventory: 
+	https://www.youtube.com/watch?v=qLrj_HWA9CI&list=PLMQtM2GgbPEW__dODFVRPNF2TBry25IK4
+	https://youtu.be/EYJTwS8emeE?si=hMbPYL9t791tZb6h
+	https://www.youtube.com/watch?v=9CEUurKqfLQ&list=PLMQtM2GgbPEW__dODFVRPNF2TBry25IK4&index=4
 
 
 External Help:
