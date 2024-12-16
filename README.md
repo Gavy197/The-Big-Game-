@@ -20,27 +20,35 @@
    	* Resources - The inventory system utalizes resources in many diffrent spots. It has a resource for each item and a resource 			to keep track of all the items in the inventory. This can be seen in most inventory files, including 				inventoryItem.gd, and inventory.gd. Along with each item's coresponding .tres file. 
 * Movement and Collisions - The player can move about the world. The player also has an additional dash movement function. The project has 7 or so colsion layers, only 2 are used by the tileset. These can be found in the overworld.tscn and the
 * Enemies and Traps - The enmies are as folow:
-  		* All enemies share the same logic for moving and chasing the player. They use raycasts to detect obsticles, and will 		give up if the player gets to far away for too long, or if the player is behind a wall for too long.
-  		* Basic 1- Goblin: The goblin is the basic enemy, it has a basic attack, and moderate health (goblin.tscn)
-    		* Basic 2- Slime: The sime has the added ability of being able to split itself into other slimes. Each slime only can 		splt while on screen, and each slime is capped at only spliting into 16 slimes. They are also the only enemy that can 		continue to move while attakcing. They have low helath and cloned slimes take amplifed damage. (slime.tscn)
-    		* Basic 3- Wolf: The wolf's ability is to call other wolves to its aid when one dies. When a wolf dies, all nearby 		wolves will attempt to go to the player, even if they weren't targeting it. Wolves also get a health, damage, and 		speed buff when one dies. If enough wolves die, wolves can begin to outrun the player. Wolves are exclusive to the 		overwolrd (wolf.tscn)
-  		* Intelligent Enemy- Golem: The golem enemy is a ranged enemy that shoots projectiles. It has the added intelligence 		of being able to detect how far away it's target is, and falling back if its target gets too close to it. 			Golems have high health and moderate damage. The golem is exusive to the maze.(golem.tscn)
-  		* Neutral Enemy- Golem: The Golem enemy is a ranged enemy that shoots projectiles. In adition to targeting the player, 		it will attack any enemy that it sees. When a enemy is attacked, it will fight back against the golem.(golem.tscn)
-		###Traps###
-  		* Spike Trap: The spike trap activates and deals damage to the player after a short delay. When a spike trap is 			activated, it'll also activate adjacent spike traps. If the player continues to stand on the trap, it won't 			activate again until they move. (spikeTrap.tscn)
-		* Fire Trap: The fire trap activates after a slightly longer delay. When a fire trap is activated, it'll deal 10 			damage every second the player remains standing on it. Steping off will deactivate the trap. (fireTrap.tscn)
-  		*Each trap has 3 diffren modes, controlled by the stepTolerance varible:
-  			*visible- the trap is visble and activates normaly (-1 step tolerance)
-    			*hidden- the trap is hidden and will become visible when activated. Activates normaly(0 step tolerance)
-    			*smart- the trap is hidden and won't unhide or activate until the second time a player touches it.(1 step 				tolerance)
-  		* These can be found inside each trap scene(inside the trap folder)  
+	* All enemies share the same logic for moving and chasing the player. They use raycasts to detect obsticles, and will 		give up if the player gets to far away for too long, or if the player is behind a wall for too long.
+  	* Basic 1- Goblin: The goblin is the basic enemy, it has a basic attack, and moderate health (goblin.tscn)
+  	* Basic 2- Slime: The sime has the added ability of being able to split itself into other slimes. Each slime only can 		splt while on screen, and each slime is capped at only spliting into 16 slimes. They are also the only enemy that can 		continue to move while attakcing. They have low helath and cloned slimes take amplifed damage. (slime.tscn)
+	* Basic 3- Wolf: The wolf's ability is to call other wolves to its aid when one dies. When a wolf dies, all nearby 		wolves will attempt to go to the player, even if they weren't targeting it. Wolves also get a health, damage, and 		speed buff when one dies. If enough wolves die, wolves can begin to outrun the player. Wolves are exclusive to the 		overwolrd (wolf.tscn)
+   	* Intelligent Enemy- Golem: The golem enemy is a ranged enemy that shoots projectiles. It has the added intelligence 		of being able to detect how far away it's target is, and falling back if its target gets too close to it. 			Golems have high health and moderate damage. The golem is exusive to the maze.(golem.tscn)
+	* Neutral Enemy- Golem: The Golem enemy is a ranged enemy that shoots projectiles. In adition to targeting the player, 		it will attack any enemy that it sees. When a enemy is attacked, it will fight back against the golem.(golem.tscn)
+  		
+	###Traps###
+	* Spike Trap: The spike trap activates and deals damage to the player after a short delay. When a spike trap is 			activated, it'll also activate adjacent spike traps. If the player continues to stand on the trap, it won't 			activate again until they move. (spikeTrap.tscn)
+	* Fire Trap: The fire trap activates after a slightly longer delay. When a fire trap is activated, it'll deal 10 			damage every second the player remains standing on it. Steping off will deactivate the trap. (fireTrap.tscn)
+	*Each trap has 3 diffren modes, controlled by the stepTolerance varible:
+		*visible- the trap is visble and activates normaly (-1 step tolerance)
+		*hidden- the trap is hidden and will become visible when activated. Activates normaly(0 step tolerance)
+		*smart- the trap is hidden and won't unhide or activate until the second time a player touches it.(1 step 				tolerance)
+	* These can be found inside each trap scene(inside the trap folder)  
   
-* Tilemaps and Worldbuilding - We use 3 tilesets, two for the overworld and one for the maze. Our tilesets use physics layers. They do not use navigation layers or terrain ###Start here###
-* Combat -
-* Inventory -
-* GUI -
-* 
-  ####Roles####
-  Zane - 
-  Gavy - 
-  Dan - 
+* Tilemaps and Worldbuilding - We use 3 tilesets, two for the overworld and one for the maze. Our tilesets use physics layers. They do not use navigation layers or terrain sets. Our game has 2 unique areas to explore, the overwolrd(overworld.tscn) and the maze(dungeon.tscn)
+* Combat - Characters have 4 diffrent actions that they can take durring combat. (all found in main_player.gd)
+	* Light Attack- The player swings their sword, attacking enemies in it's path, this move has no cooldown and deals 3 damage.
+  	* Dash- The player can dash away by moveing and pressing the shift key. The dash is on a 1 second cooldown.
+  	* Slash Attack- The player swings their sword and lauches a shockwave through the air, damaging the first enemy it touches. 		The shockwave decreases in size, but increases in damage the farther it travels. It's on a 1.8 second cooldown
+  	* Bubble Attck- The player charges up a bubble that when releaced knocks enemies back and deals damage. The longer you charge 		it, the farther it'll push enemies and damage them. While charging, the player takes reduced damage. It's on a 2.5 		second cooldown and can be charged for up to 2.8 seconds.
+* Inventory - The project has a robust inventory system, featuring currency and consumables. (All inventory things are found in the inventory folder inside Scripts, or the HUD and Pickups folder inside Scenes) The invetory has 4 consumables, which either heal health or increase max health. The invenotry also can collect currency, which is used to open the portals to progress through the world(portal.gd). By pressing "tab" the player can pause the game and acess the inventory GUI
+* GUI - The game feature a GUI that they can use to acess the invetory, pause the game, and view player health. (hudcanvaslayer.tscn)
+
+####Roles####
+* Zane - Project Manager, added enimies, added menu, added vicotry screen, helped with portal/currency interations, built levels, added player, created combat system, made game jam page, and resolved merge conflicts
+* Gavy - Developer, added inventory, added pickups, created marketing materials, and added GUI
+* Dan - Lead Artist, found sprites and created tiesets
+  
+####External Files#####
+https://drive.google.com/drive/folders/1uGQgU_i1XXshRoAF07CS93nl9nO4Dewq?usp=drive_link
